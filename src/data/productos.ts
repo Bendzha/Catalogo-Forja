@@ -31,7 +31,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "BLUSA EQUANS MUJER 100% ALGODÓN BLANCA.pdf",
-    imagen: "/images/placeholder-blusa.jpg",
+    imagen: "/images/prod-001.jpeg",
     variantes: [
       { sku: "1000074787", talla: "L", precio2026: 17950, precio2027: 17950 },
       { sku: "1000074790", talla: "M", precio2026: 17950, precio2027: 17950 },
@@ -49,7 +49,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "BLUSA EQUANS MUJER OXFORD 60% ALGODÓN 40% POLIESTER BLANCA.pdf",
-    imagen: "/images/placeholder-blusa.jpg",
+    imagen: "/images/prod-002.jpeg",
     variantes: [
       { sku: "1000051702", talla: "L", precio2026: 9950, precio2027: 9950 },
       { sku: "1000051703", talla: "M", precio2026: 9950, precio2027: 9950 },
@@ -67,7 +67,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "BLUSA EQUANS MUJER OXFORD 60% ALGODÓN 40% POLIESTER CELESTE.pdf",
-    imagen: "/images/placeholder-blusa.jpg",
+    imagen: "/images/prod-003.jpeg",
     variantes: [
       { sku: "1000051692", talla: "XXL", precio2026: 9950, precio2027: 9950 },
       { sku: "1000051706", talla: "L", precio2026: 9950, precio2027: 9950 },
@@ -85,7 +85,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "CAMISA EQUANS HOMBRE 100% ALGODÓN BLANCA.pdf",
-    imagen: "/images/placeholder-camisa.jpg",
+    imagen: "/images/prod-004.jpeg",
     variantes: [
       { sku: "1000063741", talla: "L", precio2026: 17950, precio2027: 17950 },
       { sku: "1000063742", talla: "M", precio2026: 17950, precio2027: 17950 },
@@ -103,7 +103,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "CAMISA EQUANS HOMBRE 100% ALGODÓN CELESTE.pdf",
-    imagen: "/images/placeholder-camisa.jpg",
+    imagen: "/images/prod-005.jpeg",
     variantes: [
       { sku: "1000051719", talla: "M", precio2026: 17950, precio2027: 17950 },
       { sku: "1000051720", talla: "S", precio2026: 17950, precio2027: 17950 },
@@ -121,7 +121,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "CAMISA EQUANS DENIM 100% ALGODÓN HOMBRE.pdf",
-    imagen: "/images/placeholder-camisa.jpg",
+    imagen: "/images/prod-006.jpeg",
     variantes: [
       { sku: "1000051711", talla: "L", precio2026: 16950, precio2027: 16950 },
       { sku: "1000051712", talla: "M", precio2026: 16950, precio2027: 16950 },
@@ -139,7 +139,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "CAMISA EQUANS HOMBRE OXFORD 60% ALGODÓN 40% POLIESTER BLANCA.pdf",
-    imagen: "/images/placeholder-camisa.jpg",
+    imagen: "/images/prod-007.jpeg",
     variantes: [
       { sku: "1000051721", talla: "L", precio2026: 10500, precio2027: 10500 },
       { sku: "1000051722", talla: "M", precio2026: 10500, precio2027: 10500 },
@@ -158,7 +158,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "CAMISA EQUANS HOMBRE OXFORD 60% ALGODÓN 40% POLIESTER CELESTE.pdf",
-    imagen: "/images/placeholder-camisa.jpg",
+    imagen: "/images/prod-008.jpeg",
     variantes: [
       { sku: "1000051725", talla: "XXL", precio2026: 10500, precio2027: 10500 },
       { sku: "1000051726", talla: "L", precio2026: 10500, precio2027: 10500 },
@@ -176,7 +176,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "CHAQUETA EQUANS HOMBRE SOFTCHELL TECNICA .pdf",
-    imagen: "/images/placeholder-chaqueta.jpg",
+    imagen: "/images/prod-009.jpeg",
     variantes: [
       { sku: "1000051745", talla: "L", precio2026: 32950, precio2027: 32950 },
       { sku: "1000051746", talla: "M", precio2026: 32950, precio2027: 32950 },
@@ -195,7 +195,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "CHAQUETA EQUANS MUJER SOFTCHELL TECNICA.pdf",
-    imagen: "/images/placeholder-chaqueta.jpg",
+    imagen: "/images/prod-010.jpeg",
     variantes: [
       { sku: "1000051749", talla: "L", precio2026: 32950, precio2027: 32950 },
       { sku: "1000051750", talla: "M", precio2026: 32950, precio2027: 32950 },
@@ -248,7 +248,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "MICROPOLAR EQUANS HOMBRE .pdf",
-    imagen: "/images/placeholder-micropolar.jpg",
+    imagen: "/images/prod-013.jpeg",
     variantes: [
       { sku: "1000051753", talla: "L", precio2026: 15950, precio2027: 15950 },
       { sku: "1000051754", talla: "M", precio2026: 15950, precio2027: 15950 },
@@ -266,7 +266,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "MICROPOLAR EQUANS MUJER.pdf",
-    imagen: "/images/placeholder-micropolar.jpg",
+    imagen: "/images/prod-014.jpeg",
     variantes: [
       { sku: "1000051758", talla: "L", precio2026: 15950, precio2027: 15950 },
       { sku: "1000051759", talla: "M", precio2026: 15950, precio2027: 15950 },
@@ -284,7 +284,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "PANTALON CARGO 65% POLIESTER 35% ALGODÓN HOLA TA HOMBRE.pdf",
-    imagen: "/images/placeholder-pantalon.jpg",
+    imagen: "/images/prod-015.jpeg",
     variantes: [
       { sku: "1000052071", talla: "56", precio2026: 18950, precio2027: 18950 },
       { sku: "1000052072", talla: "38", precio2026: 18950, precio2027: 18950 },
@@ -308,7 +308,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "PANTALON CARGO 65% POLIESTER 35% ALGODÓN HOLA TA MUJER.pdf",
-    imagen: "/images/placeholder-pantalon.jpg",
+    imagen: "/images/prod-016.jpeg",
     variantes: [
       { sku: "1000052083", talla: "38", precio2026: 19950, precio2027: 19950 },
       { sku: "1000052084", talla: "40", precio2026: 19950, precio2027: 19950 },
@@ -329,7 +329,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "PANTALON CARGO EQUANS HOMBRE 100% ALGODON.pdf",
-    imagen: "/images/placeholder-pantalon.jpg",
+    imagen: "/images/prod-017.jpeg",
     variantes: [
       { sku: "1000051781", talla: "40", precio2026: 17750, precio2027: 17750 },
       { sku: "1000051773", talla: "42", precio2026: 17750, precio2027: 17750 },
@@ -353,7 +353,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "PANTALON CARGO EQUANS MUJER 100% ALGODON.pdf",
-    imagen: "/images/placeholder-pantalon.jpg",
+    imagen: "/images/prod-018.jpeg",
     variantes: [
       { sku: "1000052022", talla: "38", precio2026: 18500, precio2027: 18500 },
       { sku: "1000052023", talla: "40", precio2026: 18500, precio2027: 18500 },
@@ -374,7 +374,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "PANTALON CARGO EQUANS HOMBRE 65% POLIESTER 35% ALGODÓN.pdf",
-    imagen: "/images/placeholder-pantalon.jpg",
+    imagen: "/images/prod-019.jpeg",
     variantes: [
       { sku: "1000052115", talla: "40", precio2026: 17750, precio2027: 17750 },
       { sku: "1000052041", talla: "42", precio2026: 17750, precio2027: 17750 },
@@ -397,7 +397,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "PANTALON MEZCLILLA DIELECTRICO HOMBRE 100% ALGODON.pdf",
-    imagen: "/images/placeholder-pantalon.jpg",
+    imagen: "/images/prod-020.jpeg",
     variantes: [
       { sku: "1000074895", talla: "40", precio2026: 19750, precio2027: 19750 },
       { sku: "1000074886", talla: "42", precio2026: 19750, precio2027: 19750 },
@@ -418,7 +418,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "PANTALON MEZCLILLA EQUANS MUJER 100% ALGODON.pdf",
-    imagen: "/images/placeholder-pantalon.jpg",
+    imagen: "/images/prod-021.jpeg",
     variantes: [
       { sku: "1000052001", talla: "38", precio2026: 18500, precio2027: 18500 },
       { sku: "1000052002", talla: "40", precio2026: 18500, precio2027: 18500 },
@@ -439,7 +439,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "PANTALON MEZCLILLA EQUANS HOMBRE 100% ALGODON.pdf",
-    imagen: "/images/placeholder-pantalon.jpg",
+    imagen: "/images/prod-022.jpeg",
     variantes: [
       { sku: "1000051992", talla: "40", precio2026: 17750, precio2027: 17750 },
       { sku: "1000051993", talla: "42", precio2026: 17750, precio2027: 17750 },
@@ -462,7 +462,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "PARKA TMK ALASKA EQUANS HOMBRE.pdf",
-    imagen: "/images/placeholder-parka.jpg",
+    imagen: "/images/prod-023.jpeg",
     variantes: [
       { sku: "1000052116", talla: "L", precio2026: 32500, precio2027: 32500 },
       { sku: "1000052117", talla: "M", precio2026: 32500, precio2027: 32500 },
@@ -481,7 +481,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "PARKA HW SIBERIA EQUANS.PDF",
-    imagen: "/images/placeholder-parka.jpg",
+    imagen: "/images/prod-024.jpeg",
     variantes: [
       { sku: "1000087891", talla: "S", precio2026: 59950, precio2027: 59950 },
       { sku: "1000087892", talla: "M", precio2026: 59950, precio2027: 59950 },
@@ -536,7 +536,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "POLERA PIQUE EQUANS HOMBRE 100% ALGODÓN MANGA LARGA.pdf",
-    imagen: "/images/placeholder-polera.jpg",
+    imagen: "/images/prod-027.jpeg",
     variantes: [
       { sku: "1000051787", talla: "XXL", precio2026: 9500, precio2027: 9500 },
       { sku: "1000051783", talla: "L", precio2026: 9500, precio2027: 9500 },
@@ -554,7 +554,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "POLERA PIQUE EQUANS MUJER 100% ALGODÓN MANGA LARGA.pdf",
-    imagen: "/images/placeholder-polera.jpg",
+    imagen: "/images/prod-028.jpeg",
     variantes: [
       { sku: "1000051789", talla: "M", precio2026: 9500, precio2027: 9500 },
       { sku: "1000051788", talla: "L", precio2026: 9500, precio2027: 9500 },
@@ -571,7 +571,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "POLERA PIQUE EQUANS HOMBRE 80% ALGODÓN 20% POLIESTER MANGA LARGA.pdf",
-    imagen: "/images/placeholder-polera.jpg",
+    imagen: "/images/prod-029.jpeg",
     variantes: [
       { sku: "1000051802", talla: "L", precio2026: 9500, precio2027: 9500 },
       { sku: "1000051803", talla: "M", precio2026: 9500, precio2027: 9500 },
@@ -590,7 +590,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "POLERA PIQUE EQUANS MUJER 80% ALGODÓN 20% POLIESTER MANGA LARGA.pdf",
-    imagen: "/images/placeholder-polera.jpg",
+    imagen: "/images/prod-030.jpeg",
     variantes: [
       { sku: "1000051806", talla: "L", precio2026: 9500, precio2027: 9500 },
       { sku: "1000051807", talla: "M", precio2026: 9500, precio2027: 9500 },
@@ -644,7 +644,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "BUZO PILOTO 100% ALGODÓN CON REFLECTANTE.pdf",
-    imagen: "/images/placeholder-buzo.jpg",
+    imagen: "/images/prod-033.jpeg",
     variantes: [
       { sku: "1000074828", talla: "S", precio2026: 19950, precio2027: 19950 },
       { sku: "1000074829", talla: "M", precio2026: 19950, precio2027: 19950 },
@@ -678,7 +678,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "SLACK 100% ALGODON.pdf",
-    imagen: "/images/placeholder-pantalon.jpg",
+    imagen: "/images/prod-035.jpeg",
     variantes: [
       { sku: "1000074887", talla: "S", precio2026: 39950, precio2027: 39950 },
       { sku: "1000074819", talla: "M", precio2026: 39950, precio2027: 39950 },
@@ -696,7 +696,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "PIJAMA TERMICO POLIESTER.pdf",
-    imagen: "/images/placeholder-pijama.jpg",
+    imagen: "/images/prod-036.jpeg",
     variantes: [
       { sku: "1000051687", talla: "S", precio2026: 13750, precio2027: 13750 },
       { sku: "1000051686", talla: "M", precio2026: 13750, precio2027: 13750 },
@@ -714,7 +714,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "CHALECO GEOLOGO GABARDINA NARANJO.pdf",
-    imagen: "/images/placeholder-chaleco.jpg",
+    imagen: "/images/prod-037.jpeg",
     variantes: [
       { sku: "1000051671", talla: "S", precio2026: 13500, precio2027: 13500 },
       { sku: "1000051670", talla: "M", precio2026: 13500, precio2027: 13500 },
@@ -750,7 +750,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "POLERA POLO EQUANS 100% HBRE.PDF",
-    imagen: "/images/placeholder-polera.jpg",
+    imagen: "/images/prod-039.jpeg",
     variantes: [
       { sku: "1000087758", talla: "S", precio2026: 6950, precio2027: 6950 },
       { sku: "1000087759", talla: "M", precio2026: 6950, precio2027: 6950 },
@@ -769,7 +769,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "Polera pique con reflectante.pdf",
-    imagen: "/images/placeholder-polera.jpg",
+    imagen: "/images/prod-040.jpeg",
     variantes: [
       { sku: "1000090955", talla: "M", precio2026: 16950, precio2027: 16950 },
       { sku: "1000090956", talla: "L", precio2026: 16950, precio2027: 16950 },
@@ -786,7 +786,7 @@ export const productos: Producto[] = [
     moneda: "CLP",
     descuentoPct: -9.1,
     fichaTecnica: "CHALECO GEOLOGO AMARILLO:NARANJO CON REFLECTANTE.pdf",
-    imagen: "/images/placeholder-geologo.jpg",
+    imagen: "/images/prod-041.jpeg",
     variantes: [
       { sku: "2000041151", talla: "S", precio2026: 25500, precio2027: 25500 },
       { sku: "2000041150", talla: "M", precio2026: 25500, precio2027: 25500 },
