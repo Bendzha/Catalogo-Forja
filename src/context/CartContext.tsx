@@ -1,4 +1,12 @@
-import { createContext, useContext, useState, useMemo, type ReactNode } from 'react';
+import {
+  createContext,
+  useContext,
+  useState,
+  useMemo,
+  useCallback,
+  useEffect,
+  type ReactNode,
+} from 'react';
 
 export interface ItemCarrito {
   productoId: string;
@@ -23,10 +31,34 @@ interface CartContextValue {
 
 const CartContext = createContext<CartContextValue | undefined>(undefined);
 
-export function CartProvider({ children }: { children: ReactNode }) {
-  const [items, setItems] = useState<ItemCarrito[]>([]);
+const STORAGE_KEY = 'arias-carrito-v1';
 
-  function agregarItem(nuevo: Omit<ItemCarrito, 'cantidad'>, cantidad = 1) {
+function cargarCarritoInicial(): ItemCarrito[] {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    return parsed;
+  } catch {
+    return [];
+  }
+}
+
+export function CartProvider({ children }: { children: ReactNode }) {
+  const [items, setItems] = useState<ItemCarrito[]>(cargarCarritoInicial);
+
+  // Guardar en localStorage cada vez que el carrito cambia
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+    } catch {
+      // Si localStorage falla (modo privado, cuota excedida, etc.) el carrito
+      // sigue funcionando en memoria durante la sesión, solo no persiste.
+    }
+  }, [items]);
+
+  const agregarItem = useCallback((nuevo: Omit<ItemCarrito, 'cantidad'>, cantidad = 1) => {
     setItems((prev) => {
       const existente = prev.find((i) => i.sku === nuevo.sku);
       if (existente) {
@@ -36,20 +68,20 @@ export function CartProvider({ children }: { children: ReactNode }) {
       }
       return [...prev, { ...nuevo, cantidad }];
     });
-  }
+  }, []);
 
-  function quitarItem(sku: string) {
+  const quitarItem = useCallback((sku: string) => {
     setItems((prev) => prev.filter((i) => i.sku !== sku));
-  }
+  }, []);
 
-  function actualizarCantidad(sku: string, cantidad: number) {
+  const actualizarCantidad = useCallback((sku: string, cantidad: number) => {
     if (cantidad < 1) return;
     setItems((prev) => prev.map((i) => (i.sku === sku ? { ...i, cantidad } : i)));
-  }
+  }, []);
 
-  function vaciarCarrito() {
+  const vaciarCarrito = useCallback(() => {
     setItems([]);
-  }
+  }, []);
 
   const totalItems = useMemo(() => items.reduce((sum, i) => sum + i.cantidad, 0), [items]);
   const totalPrecio = useMemo(
@@ -57,13 +89,20 @@ export function CartProvider({ children }: { children: ReactNode }) {
     [items]
   );
 
-  return (
-    <CartContext.Provider
-      value={{ items, agregarItem, quitarItem, actualizarCantidad, vaciarCarrito, totalItems, totalPrecio }}
-    >
-      {children}
-    </CartContext.Provider>
+  const value = useMemo(
+    () => ({
+      items,
+      agregarItem,
+      quitarItem,
+      actualizarCantidad,
+      vaciarCarrito,
+      totalItems,
+      totalPrecio,
+    }),
+    [items, agregarItem, quitarItem, actualizarCantidad, vaciarCarrito, totalItems, totalPrecio]
   );
+
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
 
 export function useCart() {

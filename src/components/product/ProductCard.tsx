@@ -1,27 +1,17 @@
 import { Link } from 'react-router-dom';
 import type { Producto } from '../../data/productos';
 import Badge from '../ui/Badge';
+import { formatCLP, ordenarPorTalla } from '../../utils/format';
 
 interface ProductCardProps {
   producto: Producto;
 }
 
-const ORDEN_TALLAS = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'];
-
-function formatCLP(valor: number) {
-  return new Intl.NumberFormat('es-CL', {
-    style: 'currency',
-    currency: 'CLP',
-    maximumFractionDigits: 0,
-  }).format(valor);
-}
-
 export default function ProductCard({ producto }: ProductCardProps) {
   const precioDesde = Math.min(...producto.variantes.map((v) => v.precio2026));
-  const tallas = producto.variantes
+  const tallas = ordenarPorTalla(producto.variantes)
     .map((v) => v.talla)
-    .filter((t): t is string => Boolean(t))
-    .sort((a, b) => ORDEN_TALLAS.indexOf(a) - ORDEN_TALLAS.indexOf(b));
+    .filter((t): t is string => Boolean(t));
 
   return (
     <div className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-[#112433]/5">
@@ -39,6 +29,8 @@ export default function ProductCard({ producto }: ProductCardProps) {
         <img
           src={producto.imagen}
           alt={producto.nombre}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           onError={(e) => {
             (e.target as HTMLImageElement).src =

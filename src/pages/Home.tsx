@@ -3,6 +3,7 @@ import { MapPin, Phone, Mail, Clock, CheckCircle2, Package, Warehouse, ShieldChe
 import { productos } from '../data/productos';
 import ProductGrid from '../components/product/ProductGrid';
 import Button from '../components/ui/Button';
+import { WHATSAPP_NUMERO } from '../config';
 
 const CLIENTES = ['Equans', 'Movistar', 'CGE', 'ENEL', 'Minera Escondida', 'Collahuasi', 'El Abra'];
 
@@ -186,7 +187,7 @@ export default function Home() {
             </div>
 
             <a
-              href="https://wa.me/56997331565"
+              href={`https://wa.me/${WHATSAPP_NUMERO}`}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2"

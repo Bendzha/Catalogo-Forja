@@ -2,17 +2,8 @@ import { Link } from 'react-router-dom';
 import { Trash2, Minus, Plus, MessageCircle } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import Button from '../components/ui/Button';
-
-function formatCLP(valor: number) {
-  return new Intl.NumberFormat('es-CL', {
-    style: 'currency',
-    currency: 'CLP',
-    maximumFractionDigits: 0,
-  }).format(valor);
-}
-
-// Reemplaza este número por el WhatsApp real de la empresa (con código de país, sin +, sin espacios)
-const WHATSAPP_NUMERO = '56997331565';
+import { formatCLP } from '../utils/format';
+import { WHATSAPP_NUMERO, WHATSAPP_MENSAJE_MAX_LARGO } from '../config';
 
 export default function Carrito() {
   const { items, quitarItem, actualizarCantidad, totalItems, totalPrecio } = useCart();
@@ -26,6 +17,19 @@ export default function Carrito() {
     });
     mensaje += `Total estimado: ${formatCLP(totalPrecio)}\n\n`;
     mensaje += `Quedo atento/a a la confirmación. Gracias.`;
+
+    // Si el mensaje queda demasiado largo (carritos con muchos productos),
+    // WhatsApp puede truncar o fallar el link silenciosamente. En ese caso,
+    // enviamos un resumen más corto en vez del detalle línea por línea.
+    if (mensaje.length > WHATSAPP_MENSAJE_MAX_LARGO) {
+      let resumen = `Hola, quisiera cotizar ${totalItems} productos de mi carrito:\n\n`;
+      items.forEach((item, i) => {
+        resumen += `${i + 1}. ${item.nombre} (Talla ${item.talla ?? 'Única'}, x${item.cantidad})\n`;
+      });
+      resumen += `\nTotal estimado: ${formatCLP(totalPrecio)}\n\nQuedo atento/a a la confirmación. Gracias.`;
+      return encodeURIComponent(resumen);
+    }
+
     return encodeURIComponent(mensaje);
   }
 

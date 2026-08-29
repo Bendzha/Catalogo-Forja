@@ -6,27 +6,7 @@ import Badge from '../components/ui/Badge';
 import Button from '../components/ui/Button';
 import ProductGrid from '../components/product/ProductGrid';
 import { useCart } from '../context/CartContext';
-
-const ORDEN_TALLAS = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'];
-
-function ordenarPorTalla<T extends { talla: string | null }>(variantes: T[]): T[] {
-  return [...variantes].sort((a, b) => {
-    const ia = a.talla ? ORDEN_TALLAS.indexOf(a.talla) : 999;
-    const ib = b.talla ? ORDEN_TALLAS.indexOf(b.talla) : 999;
-    if (ia === -1 && ib === -1) return 0;
-    if (ia === -1) return 1;
-    if (ib === -1) return -1;
-    return ia - ib;
-  });
-}
-
-function formatCLP(valor: number) {
-  return new Intl.NumberFormat('es-CL', {
-    style: 'currency',
-    currency: 'CLP',
-    maximumFractionDigits: 0,
-  }).format(valor);
-}
+import { formatCLP, ordenarPorTalla } from '../utils/format';
 
 export default function ProductDetail() {
   const { id } = useParams<{ id: string }>();
