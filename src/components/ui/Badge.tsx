@@ -1,16 +1,16 @@
 import type { ReactNode } from 'react';
- 
+
 interface BadgeProps {
   children: ReactNode;
   tone?: 'category' | 'discount' | 'neutral';
 }
- 
+
 const TONE_STYLES = {
-  category: 'bg-[#6B7A2E] text-white',
-  discount: 'bg-[#D4D93A] text-[#3D332E]',
-  neutral: 'bg-[#3D332E]/8 text-[#3D332E]',
+  category: 'bg-[#FE8900] text-white',
+  discount: 'bg-[#0098C9] text-white',
+  neutral: 'bg-[#112433]/8 text-[#112433]',
 };
- 
+
 export default function Badge({ children, tone = 'neutral' }: BadgeProps) {
   return (
     <span

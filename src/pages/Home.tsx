@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, CheckCircle2, Package, Warehouse, ShieldCheck } from 'lucide-react';
 import { productos } from '../data/productos';
 import ProductGrid from '../components/product/ProductGrid';
 import Button from '../components/ui/Button';
+
+const CLIENTES = ['Equans', 'Movistar', 'CGE', 'ENEL', 'Minera Escondida', 'Collahuasi', 'El Abra'];
 
 export default function Home() {
   const destacados = productos.slice(0, 4);
@@ -10,116 +12,131 @@ export default function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-[#3D332E] text-white">
-        <div className="max-w-7xl mx-auto px-6 py-20 flex flex-col items-start gap-5">
-          <span className="text-[#D4D93A] font-semibold text-sm uppercase tracking-wide">
-            BCM · Ropa de trabajo
-          </span>
-          <h1 className="text-4xl sm:text-5xl font-bold leading-tight max-w-2xl">
-            Vestimenta industrial hecha para resistir la jornada completa
-          </h1>
-          <p className="text-white/60 max-w-xl">
-            Pantalones cargo, parkas, chalecos reflectantes y uniformes completos,
-            pensados para minería, terreno y construcción.
+      <section className="bg-[#112433] text-white overflow-hidden relative">
+        <div className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+          {/* Columna texto */}
+          <div className="flex flex-col items-start gap-5">
+            <span className="text-[#FE8900] font-bold text-sm uppercase tracking-wide">
+              15 años abasteciendo a la gran minería y las telecomunicaciones
+            </span>
+            <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight">
+              Ahora, a tu servicio
+            </h1>
+            <p className="text-white/70 leading-relaxed">
+              Soy José Antonio Arias, Ingeniero en Logística. Durante más de 15 años
+              lideré operaciones logísticas críticas para Equans, Movistar, CGE, ENEL y
+              Minera Escondida, Collahuasi y El Abra, gestionando más de $600MM en
+              inventario y un Centro de Distribución de 3.000 m².
+            </p>
+            <p className="text-white font-semibold">
+              Sé lo que cuesta una faena parada por falta de stock.
+            </p>
+            <Link to="/catalogo">
+              <Button variant="primary" size="lg">
+                Ver catálogo completo
+              </Button>
+            </Link>
+          </div>
+
+          {/* Columna panel de cifras */}
+          <div className="grid grid-cols-2 gap-4">
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm">
+              <Warehouse size={26} className="text-[#0098C9] mb-3" />
+              <p className="text-2xl font-extrabold">3.000 m²</p>
+              <p className="text-xs text-white/60 mt-1">Centro de distribución operado</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm">
+              <Package size={26} className="text-[#0098C9] mb-3" />
+              <p className="text-2xl font-extrabold">$600MM+</p>
+              <p className="text-xs text-white/60 mt-1">En inventario gestionado</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm">
+              <ShieldCheck size={26} className="text-[#FE8900] mb-3" />
+              <p className="text-2xl font-extrabold">15 años</p>
+              <p className="text-xs text-white/60 mt-1">De experiencia en terreno</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm">
+              <CheckCircle2 size={26} className="text-[#FE8900] mb-3" />
+              <p className="text-2xl font-extrabold">SAP</p>
+              <p className="text-xs text-white/60 mt-1">Estándar de trazabilidad</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Decoración de fondo sutil */}
+        <div className="absolute -right-24 -bottom-24 w-96 h-96 rounded-full bg-[#0098C9]/10 blur-3xl" />
+        <div className="absolute -left-24 -top-24 w-72 h-72 rounded-full bg-[#FE8900]/10 blur-3xl" />
+      </section>
+
+      {/* Clientes / credibilidad */}
+      <section className="bg-[#0098C9]/5 border-b border-[#112433]/8">
+        <div className="max-w-7xl mx-auto px-6 py-6">
+          <p className="text-xs text-[#112433]/50 uppercase tracking-wide mb-3 text-center">
+            Experiencia liderando operaciones para
           </p>
-          <Link to="/catalogo">
-            <Button variant="primary" size="lg">
-              Ver catálogo completo
-            </Button>
-          </Link>
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-2">
+            {CLIENTES.map((c) => (
+              <span key={c} className="text-sm font-semibold text-[#112433]/60">
+                {c}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Destacados */}
       <section className="max-w-7xl mx-auto px-6 py-14">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-[#3D332E]">Productos destacados</h2>
-          <Link to="/catalogo" className="text-sm font-medium text-[#6B7A2E] hover:underline">
+          <h2 className="text-2xl font-bold text-[#112433]">Productos destacados</h2>
+          <Link to="/catalogo" className="text-sm font-medium text-[#0098C9] hover:underline">
             Ver todos →
           </Link>
         </div>
         <ProductGrid productos={destacados} />
       </section>
 
-      {/* Quiénes somos */}
-      <section className="bg-[#FAFAF8] border-y border-[#3D332E]/8">
+      {/* Propuesta de valor / servicio logístico */}
+      <section className="bg-[#F5F9FB] border-y border-[#112433]/8">
         <div className="max-w-5xl mx-auto px-6 py-16">
-          <span className="text-[#6B7A2E] font-semibold text-sm uppercase tracking-wide">
-            Sobre BCM
+          <span className="text-[#0098C9] font-semibold text-sm uppercase tracking-wide">
+            ARIAS Supply &amp; Logistics
           </span>
-          <h2 className="text-3xl font-bold text-[#3D332E] mt-2 mb-6 max-w-2xl">
-            Más de 20 años vistiendo a las empresas líderes de Chile
+          <h2 className="text-3xl font-bold text-[#112433] mt-2 mb-6 max-w-2xl">
+            EPP certificado, uniformes, herramientas y equipos, con un servicio logístico
+            que no falla
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-            <div className="bg-white rounded-2xl shadow-sm p-6 text-center border border-[#3D332E]/5">
-              <p className="text-3xl font-bold text-[#6B7A2E]">2005</p>
-              <p className="text-sm text-[#3D332E]/60 mt-1">Inicio de operaciones</p>
-            </div>
-            <div className="bg-white rounded-2xl shadow-sm p-6 text-center border border-[#3D332E]/5">
-              <p className="text-3xl font-bold text-[#6B7A2E]">20+</p>
-              <p className="text-sm text-[#3D332E]/60 mt-1">Años de experiencia</p>
-            </div>
-            <div className="bg-white rounded-2xl shadow-sm p-6 text-center border border-[#3D332E]/5">
-              <p className="text-3xl font-bold text-[#6B7A2E]">N°1</p>
-              <p className="text-sm text-[#3D332E]/60 mt-1">
-                En uniformes técnicos de telecomunicaciones
-              </p>
-            </div>
+            {[
+              'Stock crítico asegurado',
+              'Entrega en terreno y faena',
+              'Trazabilidad total con estándar SAP',
+            ].map((item) => (
+              <div
+                key={item}
+                className="bg-white rounded-2xl shadow-sm p-5 border border-[#112433]/5 flex items-start gap-3"
+              >
+                <CheckCircle2 size={20} className="text-[#0098C9] flex-shrink-0 mt-0.5" />
+                <p className="text-sm font-medium text-[#112433]">{item}</p>
+              </div>
+            ))}
           </div>
 
-          <div className="max-w-3xl space-y-4 text-[#3D332E]/70 leading-relaxed">
-            <p>
-              BC Marketing inicia formalmente sus operaciones en diciembre de 2005,
-              logrando posicionarse como uno de los principales proveedores de uniformes
-              técnicos de telecomunicaciones del país.
-            </p>
-            <p>
-              Nos preocupamos de potenciar la imagen de cada empresa que confía en
-              nosotros. Contamos con una línea de ropa técnica y corporativa, además de un
-              departamento de diseño propio que nos permite un manejo integral en el
-              desarrollo de cada requerimiento.
-            </p>
-            <p>
-              Con el paso de los años nos hemos especializado en el área de
-              telecomunicaciones, atendiendo a las empresas más importantes de este rubro
-              a nivel nacional.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12">
-            <div>
-              <div className="w-10 h-10 rounded-lg bg-[#D4D93A] mb-3" />
-              <h3 className="font-semibold text-[#3D332E] mb-1">Diseño propio</h3>
-              <p className="text-sm text-[#3D332E]/60">
-                Departamento de diseño interno para tu imagen corporativa de principio a
-                fin.
-              </p>
-            </div>
-            <div>
-              <div className="w-10 h-10 rounded-lg bg-[#6B7A2E] mb-3" />
-              <h3 className="font-semibold text-[#3D332E] mb-1">Especialización técnica</h3>
-              <p className="text-sm text-[#3D332E]/60">
-                Expertos en telecomunicaciones e industria, con prendas para terreno.
-              </p>
-            </div>
-            <div>
-              <div className="w-10 h-10 rounded-lg bg-[#3D332E] mb-3" />
-              <h3 className="font-semibold text-[#3D332E] mb-1">Trato personalizado</h3>
-              <p className="text-sm text-[#3D332E]/60">
-                Atención responsable y directa, adaptada a cada empresa.
-              </p>
-            </div>
-          </div>
+          <p className="text-[#112433]/70 leading-relaxed max-w-3xl">
+            No somos un vendedor más. Somos tu socio logístico, de logístico a logístico.
+            Con más de $600MM en inventario gestionado y experiencia en Centros de
+            Distribución de 3.000 m², entendemos lo que realmente cuesta una faena
+            detenida por falta de stock — y trabajamos para que eso nunca te pase.
+          </p>
         </div>
       </section>
 
       {/* Contacto y ubicación */}
       <section className="max-w-7xl mx-auto px-6 py-16">
-        <span className="text-[#6B7A2E] font-semibold text-sm uppercase tracking-wide">
+        <span className="text-[#0098C9] font-semibold text-sm uppercase tracking-wide">
           Contacto
         </span>
-        <h2 className="text-3xl font-bold text-[#3D332E] mt-2 mb-8">
+        <h2 className="text-3xl font-bold text-[#112433] mt-2 mb-8">
           Conversemos sobre tu proyecto
         </h2>
 
@@ -127,49 +144,49 @@ export default function Home() {
           {/* Datos de contacto */}
           <div className="flex flex-col gap-5">
             <div className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-lg bg-[#FAFAF8] flex items-center justify-center flex-shrink-0">
-                <Phone size={18} className="text-[#6B7A2E]" />
+              <div className="w-10 h-10 rounded-lg bg-[#F5F9FB] flex items-center justify-center flex-shrink-0">
+                <Phone size={18} className="text-[#0098C9]" />
               </div>
               <div>
-                <p className="text-sm text-[#3D332E]/50">Teléfono</p>
-                <p className="font-medium text-[#3D332E]">+56 9 1234 5678</p>
+                <p className="text-sm text-[#112433]/50">Teléfono</p>
+                <p className="font-medium text-[#112433]">+56 9 9733 1565</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-lg bg-[#FAFAF8] flex items-center justify-center flex-shrink-0">
-                <Mail size={18} className="text-[#6B7A2E]" />
+              <div className="w-10 h-10 rounded-lg bg-[#F5F9FB] flex items-center justify-center flex-shrink-0">
+                <Mail size={18} className="text-[#0098C9]" />
               </div>
               <div>
-                <p className="text-sm text-[#3D332E]/50">Correo</p>
-                <p className="font-medium text-[#3D332E]">contacto@bcmarketing.cl</p>
+                <p className="text-sm text-[#112433]/50">Correo</p>
+                <p className="font-medium text-[#112433]">contacto@ariasupplylogistics.cl</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-lg bg-[#FAFAF8] flex items-center justify-center flex-shrink-0">
-                <MapPin size={18} className="text-[#6B7A2E]" />
+              <div className="w-10 h-10 rounded-lg bg-[#F5F9FB] flex items-center justify-center flex-shrink-0">
+                <MapPin size={18} className="text-[#0098C9]" />
               </div>
               <div>
-                <p className="text-sm text-[#3D332E]/50">Dirección</p>
-                <p className="font-medium text-[#3D332E]">
+                <p className="text-sm text-[#112433]/50">Dirección</p>
+                <p className="font-medium text-[#112433]">
                   Av. Ejemplo 1234, Santiago, Chile
                 </p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-lg bg-[#FAFAF8] flex items-center justify-center flex-shrink-0">
-                <Clock size={18} className="text-[#6B7A2E]" />
+              <div className="w-10 h-10 rounded-lg bg-[#F5F9FB] flex items-center justify-center flex-shrink-0">
+                <Clock size={18} className="text-[#0098C9]" />
               </div>
               <div>
-                <p className="text-sm text-[#3D332E]/50">Horario</p>
-                <p className="font-medium text-[#3D332E]">Lunes a viernes, 9:00 - 18:00</p>
+                <p className="text-sm text-[#112433]/50">Horario</p>
+                <p className="font-medium text-[#112433]">Lunes a viernes, 9:00 - 18:00</p>
               </div>
             </div>
 
             <a
-              href="https://wa.me/56912345678"
+              href="https://wa.me/56997331565"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2"
@@ -181,9 +198,9 @@ export default function Home() {
           </div>
 
           {/* Mapa */}
-          <div className="rounded-2xl overflow-hidden border border-[#3D332E]/10 min-h-[320px]">
+          <div className="rounded-2xl overflow-hidden border border-[#112433]/10 min-h-[320px]">
             <iframe
-              title="Ubicación BCM"
+              title="Ubicación ARIAS Supply & Logistics"
               src="https://www.google.com/maps?q=Santiago,Chile&output=embed"
               width="100%"
               height="100%"

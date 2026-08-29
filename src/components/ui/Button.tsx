@@ -8,11 +8,11 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const VARIANT_STYLES = {
   primary:
-    'bg-[#D4D93A] text-[#3D332E] hover:bg-[#c3c832] shadow-sm hover:shadow-md',
+    'bg-[#0098C9] text-white hover:bg-[#0084ae] shadow-sm hover:shadow-md',
   secondary:
-    'bg-[#6B7A2E] text-white hover:bg-[#596726] shadow-sm hover:shadow-md',
+    'bg-[#FE8900] text-white hover:bg-[#e57a00] shadow-sm hover:shadow-md',
   outline:
-    'bg-transparent text-[#3D332E] border border-[#3D332E]/20 hover:border-[#3D332E]/50 hover:bg-[#3D332E]/5',
+    'bg-transparent text-[#112433] border border-[#112433]/20 hover:border-[#112433]/50 hover:bg-[#112433]/5',
 };
 
 const SIZE_STYLES = {
@@ -33,7 +33,7 @@ export default function Button({
       className={`
         inline-flex items-center justify-center gap-2 rounded-lg font-medium
         transition-all duration-200 ease-out
-        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4D93A] focus-visible:ring-offset-2
+        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0098C9] focus-visible:ring-offset-2
         disabled:opacity-50 disabled:pointer-events-none
         ${VARIANT_STYLES[variant]} ${SIZE_STYLES[size]} ${className}
       `}
