@@ -1,11 +1,24 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { ShoppingCart, Check } from 'lucide-react';
+import { ShoppingCart, Check, ChevronLeft, Minus, Plus } from 'lucide-react';
 import { productos } from '../data/productos';
 import Badge from '../components/ui/Badge';
 import Button from '../components/ui/Button';
 import ProductGrid from '../components/product/ProductGrid';
 import { useCart } from '../context/CartContext';
+
+const ORDEN_TALLAS = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'];
+
+function ordenarPorTalla<T extends { talla: string | null }>(variantes: T[]): T[] {
+  return [...variantes].sort((a, b) => {
+    const ia = a.talla ? ORDEN_TALLAS.indexOf(a.talla) : 999;
+    const ib = b.talla ? ORDEN_TALLAS.indexOf(b.talla) : 999;
+    if (ia === -1 && ib === -1) return 0;
+    if (ia === -1) return 1;
+    if (ib === -1) return -1;
+    return ia - ib;
+  });
+}
 
 function formatCLP(valor: number) {
   return new Intl.NumberFormat('es-CL', {
@@ -22,6 +35,12 @@ export default function ProductDetail() {
   const [tallaSeleccionada, setTallaSeleccionada] = useState<string | null>(null);
   const { agregarItem } = useCart();
   const [agregado, setAgregado] = useState(false);
+  const [cantidad, setCantidad] = useState(1);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    setCantidad(1);
+  }, [id]);
 
   if (!producto) {
     return (
@@ -37,8 +56,9 @@ export default function ProductDetail() {
     );
   }
 
+  const variantesOrdenadas = ordenarPorTalla(producto.variantes);
   const varianteActiva =
-    producto.variantes.find((v) => v.talla === tallaSeleccionada) ?? producto.variantes[0];
+    variantesOrdenadas.find((v) => v.talla === tallaSeleccionada) ?? variantesOrdenadas[0];
 
   const precioDesde = Math.min(...producto.variantes.map((v) => v.precio2026));
   const relacionados = productos
@@ -62,9 +82,10 @@ export default function ProductDetail() {
 
       <button
         onClick={() => navigate(-1)}
-        className="inline-flex items-center gap-1.5 text-sm text-[#112433]/60 hover:text-[#112433] mb-6 transition-colors"
+        className="inline-flex items-center gap-2 text-base font-medium text-[#112433] bg-white hover:bg-[#112433]/5 border border-[#112433]/15 rounded-lg px-4 py-2.5 mb-6 transition-colors"
       >
-        ← Volver
+        <ChevronLeft size={20} />
+        Volver
       </button>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -114,7 +135,7 @@ export default function ProductDetail() {
           <div className="mt-6">
             <p className="text-sm font-medium text-[#112433] mb-2">Talla</p>
             <div className="flex flex-wrap gap-2">
-              {producto.variantes.map((v) => (
+              {variantesOrdenadas.map((v) => (
                 <button
                   key={v.sku}
                   onClick={() => setTallaSeleccionada(v.talla)}
@@ -130,20 +151,45 @@ export default function ProductDetail() {
             </div>
           </div>
 
+          {/* Selector de cantidad */}
+          <div className="mt-6">
+            <p className="text-sm font-medium text-[#112433] mb-2">Cantidad</p>
+            <div className="inline-flex items-center gap-3 border border-[#112433]/20 rounded-lg px-3 py-2">
+              <button
+                onClick={() => setCantidad((c) => Math.max(1, c - 1))}
+                className="text-[#112433]/60 hover:text-[#112433] p-1"
+                aria-label="Disminuir cantidad"
+              >
+                <Minus size={16} />
+              </button>
+              <span className="text-base font-semibold w-6 text-center">{cantidad}</span>
+              <button
+                onClick={() => setCantidad((c) => c + 1)}
+                className="text-[#112433]/60 hover:text-[#112433] p-1"
+                aria-label="Aumentar cantidad"
+              >
+                <Plus size={16} />
+              </button>
+            </div>
+          </div>
+
           <div className="mt-6 flex gap-3">
             <Button
               size="lg"
               className="flex-1"
               onClick={() => {
-                agregarItem({
-                  productoId: producto.id,
-                  nombre: producto.nombre,
-                  categoria: producto.categoria,
-                  imagen: producto.imagen,
-                  sku: varianteActiva.sku,
-                  talla: varianteActiva.talla,
-                  precio: varianteActiva.precio2026,
-                });
+                agregarItem(
+                  {
+                    productoId: producto.id,
+                    nombre: producto.nombre,
+                    categoria: producto.categoria,
+                    imagen: producto.imagen,
+                    sku: varianteActiva.sku,
+                    talla: varianteActiva.talla,
+                    precio: varianteActiva.precio2026,
+                  },
+                  cantidad
+                );
                 setAgregado(true);
                 setTimeout(() => setAgregado(false), 2000);
               }}
@@ -151,45 +197,10 @@ export default function ProductDetail() {
               {agregado ? <Check size={18} /> : <ShoppingCart size={18} />}
               <span>{agregado ? 'Agregado al carrito' : 'Agregar al carrito'}</span>
             </Button>
-            {producto.fichaTecnica && (
-              <Button variant="outline" size="lg">
-                Ficha técnica
-              </Button>
-            )}
           </div>
 
           {/* SKU actual */}
           <p className="text-xs text-[#112433]/40 mt-4">SKU: {varianteActiva.sku}</p>
-        </div>
-      </div>
-
-      {/* Tabla de precios por SKU/talla */}
-      <div className="mt-14">
-        <h2 className="text-lg font-bold text-[#112433] mb-4">Precios por talla y SKU</h2>
-        <div className="overflow-x-auto rounded-xl border border-[#112433]/8">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="bg-[#F5F9FB] text-left text-[#112433]/60 uppercase text-xs tracking-wide">
-                <th className="px-4 py-3 font-semibold">Talla</th>
-                <th className="px-4 py-3 font-semibold">SKU</th>
-                <th className="px-4 py-3 font-semibold text-right">Precio 2026</th>
-                <th className="px-4 py-3 font-semibold text-right">Precio 2027</th>
-              </tr>
-            </thead>
-            <tbody>
-              {producto.variantes.map((v, i) => (
-                <tr
-                  key={v.sku}
-                  className={i % 2 === 0 ? 'bg-white' : 'bg-[#F5F9FB]/50'}
-                >
-                  <td className="px-4 py-3 font-medium text-[#112433]">{v.talla ?? 'Única'}</td>
-                  <td className="px-4 py-3 text-[#112433]/60 font-mono text-xs">{v.sku}</td>
-                  <td className="px-4 py-3 text-right text-[#112433]">{formatCLP(v.precio2026)}</td>
-                  <td className="px-4 py-3 text-right text-[#112433]">{formatCLP(v.precio2027)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
         </div>
       </div>
 

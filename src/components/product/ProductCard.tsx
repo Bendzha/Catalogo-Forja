@@ -6,6 +6,8 @@ interface ProductCardProps {
   producto: Producto;
 }
 
+const ORDEN_TALLAS = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'];
+
 function formatCLP(valor: number) {
   return new Intl.NumberFormat('es-CL', {
     style: 'currency',
@@ -18,7 +20,8 @@ export default function ProductCard({ producto }: ProductCardProps) {
   const precioDesde = Math.min(...producto.variantes.map((v) => v.precio2026));
   const tallas = producto.variantes
     .map((v) => v.talla)
-    .filter((t): t is string => Boolean(t));
+    .filter((t): t is string => Boolean(t))
+    .sort((a, b) => ORDEN_TALLAS.indexOf(a) - ORDEN_TALLAS.indexOf(b));
 
   return (
     <div className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-[#112433]/5">
