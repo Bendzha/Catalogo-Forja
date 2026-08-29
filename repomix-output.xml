@@ -103,8 +103,11 @@ src/
     Catalogo.tsx
     Home.tsx
     ProductDetail.tsx
+  utils/
+    Format.ts
   App.css
   App.tsx
+  Config.ts
   index.css
   main.tsx
 .gitignore
@@ -160,216 +163,6 @@ This section contains the contents of the repository's files.
 <svg xmlns="http://www.w3.org/2000/svg" width="77" height="47" fill="none" aria-labelledby="vite-logo-title" viewBox="0 0 77 47"><title id="vite-logo-title">Vite</title><style>.parenthesis{fill:#000}@media (prefers-color-scheme:dark){.parenthesis{fill:#fff}}</style><path fill="#9135ff" d="M40.151 45.71c-.663.844-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.493c-.92 0-1.457-1.04-.92-1.788l7.479-10.471c1.07-1.498 0-3.578-1.842-3.578H15.443c-.92 0-1.456-1.04-.92-1.788l9.696-13.576c.213-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.472c-1.07 1.497 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.087.89 1.83L40.153 45.712z"/><mask id="a" width="48" height="47" x="14" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M40.047 45.71c-.663.843-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.389c-.92 0-1.457-1.04-.92-1.788l7.479-10.472c1.07-1.497 0-3.578-1.842-3.578H15.34c-.92 0-1.456-1.04-.92-1.788l9.696-13.575c.213-.297.556-.474.92-.474H53.93c.92 0 1.456 1.04.92 1.788L47.37 13.03c-1.07 1.498 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.088.89 1.831L40.049 45.712z"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#eee6ff" rx="5.508" ry="14.704" transform="rotate(269.814 20.96 11.29)scale(-1 1)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#eee6ff" rx="10.399" ry="29.851" transform="rotate(89.814 -16.902 -8.275)scale(1 -1)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#8900ff" rx="5.508" ry="30.487" transform="rotate(89.814 -19.197 -7.127)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.928 4.177)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.738 5.52)scale(1 -1)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#eee6ff" rx="14.072" ry="22.078" transform="rotate(93.35 31.245 55.578)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx="14.592" cy="9.743" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(39.51 14.592 9.743)"/></g><g filter="url(#k)"><ellipse cx="61.728" cy="-5.321" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 61.728 -5.32)"/></g><g filter="url(#l)"><ellipse cx="55.618" cy="7.104" fill="#00c2ff" rx="5.971" ry="9.665" transform="rotate(37.892 55.618 7.104)"/></g><g filter="url(#m)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#n)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#o)"><ellipse cx="49.857" cy="30.678" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 49.857 30.678)"/></g><g filter="url(#p)"><ellipse cx="52.623" cy="33.171" fill="#00c2ff" rx="5.971" ry="15.297" transform="rotate(37.892 52.623 33.17)"/></g></g><path d="M6.919 0c-9.198 13.166-9.252 33.575 0 46.789h6.215c-9.25-13.214-9.196-33.623 0-46.789zm62.424 0h-6.215c9.198 13.166 9.252 33.575 0 46.789h6.215c9.25-13.214 9.196-33.623 0-46.789" class="parenthesis"/><defs><filter id="b" width="60.045" height="41.654" x="-5.564" y="16.92" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-40.407" y="-6.762" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-35.435" y="2.801" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-30.84" y="20.8" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-29.307" y="21.949" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="29.961" y="-17.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-13.43" y="-22.082" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="34.321" y="-37.644" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="38.847" y="-10.552" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="22.45" y="-1.645" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="32.919" y="11.36" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter></defs></svg>
 </file>
 
-<file path="src/context/CartContext.tsx">
-import { createContext, useContext, useState, useMemo, type ReactNode } from 'react';
-
-export interface ItemCarrito {
-  productoId: string;
-  nombre: string;
-  categoria: string;
-  imagen: string;
-  sku: string;
-  talla: string | null;
-  precio: number;
-  cantidad: number;
-}
-
-interface CartContextValue {
-  items: ItemCarrito[];
-  agregarItem: (item: Omit<ItemCarrito, 'cantidad'>, cantidad?: number) => void;
-  quitarItem: (sku: string) => void;
-  actualizarCantidad: (sku: string, cantidad: number) => void;
-  vaciarCarrito: () => void;
-  totalItems: number;
-  totalPrecio: number;
-}
-
-const CartContext = createContext<CartContextValue | undefined>(undefined);
-
-export function CartProvider({ children }: { children: ReactNode }) {
-  const [items, setItems] = useState<ItemCarrito[]>([]);
-
-  function agregarItem(nuevo: Omit<ItemCarrito, 'cantidad'>, cantidad = 1) {
-    setItems((prev) => {
-      const existente = prev.find((i) => i.sku === nuevo.sku);
-      if (existente) {
-        return prev.map((i) =>
-          i.sku === nuevo.sku ? { ...i, cantidad: i.cantidad + cantidad } : i
-        );
-      }
-      return [...prev, { ...nuevo, cantidad }];
-    });
-  }
-
-  function quitarItem(sku: string) {
-    setItems((prev) => prev.filter((i) => i.sku !== sku));
-  }
-
-  function actualizarCantidad(sku: string, cantidad: number) {
-    if (cantidad < 1) return;
-    setItems((prev) => prev.map((i) => (i.sku === sku ? { ...i, cantidad } : i)));
-  }
-
-  function vaciarCarrito() {
-    setItems([]);
-  }
-
-  const totalItems = useMemo(() => items.reduce((sum, i) => sum + i.cantidad, 0), [items]);
-  const totalPrecio = useMemo(
-    () => items.reduce((sum, i) => sum + i.precio * i.cantidad, 0),
-    [items]
-  );
-
-  return (
-    <CartContext.Provider
-      value={{ items, agregarItem, quitarItem, actualizarCantidad, vaciarCarrito, totalItems, totalPrecio }}
-    >
-      {children}
-    </CartContext.Provider>
-  );
-}
-
-export function useCart() {
-  const ctx = useContext(CartContext);
-  if (!ctx) throw new Error('useCart debe usarse dentro de <CartProvider>');
-  return ctx;
-}
-</file>
-
-<file path="src/pages/Carrito.tsx">
-import { Link } from 'react-router-dom';
-import { Trash2, Minus, Plus, MessageCircle } from 'lucide-react';
-import { useCart } from '../context/CartContext';
-import Button from '../components/ui/Button';
-
-function formatCLP(valor: number) {
-  return new Intl.NumberFormat('es-CL', {
-    style: 'currency',
-    currency: 'CLP',
-    maximumFractionDigits: 0,
-  }).format(valor);
-}
-
-// Reemplaza este número por el WhatsApp real de la empresa (con código de país, sin +, sin espacios)
-const WHATSAPP_NUMERO = '56997331565';
-
-export default function Carrito() {
-  const { items, quitarItem, actualizarCantidad, totalItems, totalPrecio } = useCart();
-
-  function generarMensajeWhatsApp() {
-    let mensaje = `Hola, quisiera cotizar los siguientes productos:\n\n`;
-    items.forEach((item, i) => {
-      mensaje += `${i + 1}. ${item.nombre}\n`;
-      mensaje += `   Talla: ${item.talla ?? 'Única'} | SKU: ${item.sku}\n`;
-      mensaje += `   Cantidad: ${item.cantidad} | Precio unitario: ${formatCLP(item.precio)}\n\n`;
-    });
-    mensaje += `Total estimado: ${formatCLP(totalPrecio)}\n\n`;
-    mensaje += `Quedo atento/a a la confirmación. Gracias.`;
-    return encodeURIComponent(mensaje);
-  }
-
-  const linkWhatsApp = `https://wa.me/${WHATSAPP_NUMERO}?text=${generarMensajeWhatsApp()}`;
-
-  if (items.length === 0) {
-    return (
-      <div className="max-w-2xl mx-auto px-6 py-24 text-center">
-        <h1 className="text-2xl font-bold text-[#112433]">Tu carrito está vacío</h1>
-        <p className="text-[#112433]/60 mt-2">
-          Agrega productos desde el catálogo para cotizarlos aquí.
-        </p>
-        <Link to="/catalogo" className="inline-block mt-6">
-          <Button variant="primary">Ver catálogo</Button>
-        </Link>
-      </div>
-    );
-  }
-
-  return (
-    <div className="max-w-4xl mx-auto px-6 py-10">
-      <h1 className="text-3xl font-bold text-[#112433] mb-1">Carrito de cotización</h1>
-      <p className="text-[#112433]/60 mb-8">
-        {totalItems} producto{totalItems !== 1 ? 's' : ''} seleccionado
-        {totalItems !== 1 ? 's' : ''}
-      </p>
-
-      <div className="flex flex-col gap-4">
-        {items.map((item) => (
-          <div
-            key={item.sku}
-            className="flex items-center gap-4 bg-white rounded-xl border border-[#112433]/8 p-4"
-          >
-            <div className="w-20 h-20 rounded-lg overflow-hidden bg-[#DCE6EC] flex-shrink-0">
-              <img
-                src={item.imagen}
-                alt={item.nombre}
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src =
-                    'https://placehold.co/200x200/112433/F5F9FB?text=Sin+imagen';
-                }}
-              />
-            </div>
-
-            <div className="flex-1 min-w-0">
-              <p className="font-semibold text-[#112433] text-sm leading-snug truncate">
-                {item.nombre}
-              </p>
-              <p className="text-xs text-[#112433]/50 mt-0.5">
-                Talla: {item.talla ?? 'Única'} · SKU: {item.sku}
-              </p>
-              <p className="text-sm font-bold text-[#112433] mt-1">
-                {formatCLP(item.precio)}
-              </p>
-            </div>
-
-            {/* Selector de cantidad */}
-            <div className="flex items-center gap-2 border border-[#112433]/15 rounded-lg px-2 py-1">
-              <button
-                onClick={() => actualizarCantidad(item.sku, item.cantidad - 1)}
-                className="text-[#112433]/60 hover:text-[#112433] p-1"
-                aria-label="Disminuir cantidad"
-              >
-                <Minus size={14} />
-              </button>
-              <span className="text-sm font-medium w-5 text-center">{item.cantidad}</span>
-              <button
-                onClick={() => actualizarCantidad(item.sku, item.cantidad + 1)}
-                className="text-[#112433]/60 hover:text-[#112433] p-1"
-                aria-label="Aumentar cantidad"
-              >
-                <Plus size={14} />
-              </button>
-            </div>
-
-            <button
-              onClick={() => quitarItem(item.sku)}
-              className="text-[#112433]/40 hover:text-red-500 transition-colors p-2"
-              aria-label="Quitar del carrito"
-            >
-              <Trash2 size={18} />
-            </button>
-          </div>
-        ))}
-      </div>
-
-      {/* Resumen y cotización */}
-      <div className="mt-8 bg-[#F5F9FB] rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div>
-          <p className="text-sm text-[#112433]/50">Total estimado</p>
-          <p className="text-2xl font-bold text-[#112433]">{formatCLP(totalPrecio)}</p>
-        </div>
-        <a href={linkWhatsApp} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-          <Button variant="primary" size="lg" className="w-full sm:w-auto">
-            <MessageCircle size={18} />
-            Solicitar cotización por WhatsApp
-          </Button>
-        </a>
-      </div>
-    </div>
-  );
-}
-</file>
-
 <file path="src/pages/Catalogo.tsx">
 import { useMemo, useState } from 'react';
 import { productos, categorias } from '../data/productos';
@@ -413,6 +206,29 @@ export default function Catalogo() {
       <ProductGrid productos={productosFiltrados} />
     </div>
   );
+}
+</file>
+
+<file path="src/utils/Format.ts">
+export function formatCLP(valor: number) {
+  return new Intl.NumberFormat('es-CL', {
+    style: 'currency',
+    currency: 'CLP',
+    maximumFractionDigits: 0,
+  }).format(valor);
+}
+
+export const ORDEN_TALLAS = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'] as const;
+export type Talla = (typeof ORDEN_TALLAS)[number];
+
+function posicionTalla(talla: string | null): number {
+  if (!talla) return 999;
+  const idx = ORDEN_TALLAS.indexOf(talla as Talla);
+  return idx === -1 ? 999 : idx;
+}
+
+export function ordenarPorTalla<T extends { talla: string | null }>(variantes: T[]): T[] {
+  return [...variantes].sort((a, b) => posicionTalla(a.talla) - posicionTalla(b.talla));
 }
 </file>
 
@@ -601,6 +417,17 @@ export default function Catalogo() {
     border-right-color: var(--border);
   }
 }
+</file>
+
+<file path="src/Config.ts">
+// Número de WhatsApp de contacto (formato: código país + número, sin "+" ni espacios).
+// Se puede sobrescribir con la variable de entorno VITE_WHATSAPP_NUMERO
+// creando un archivo .env en la raíz del proyecto con:
+//   VITE_WHATSAPP_NUMERO=56912345678
+export const WHATSAPP_NUMERO = import.meta.env.VITE_WHATSAPP_NUMERO ?? '56997331565';
+
+// Margen de seguridad bajo el límite práctico de longitud de URL de WhatsApp (~2000 caracteres)
+export const WHATSAPP_MENSAJE_MAX_LARGO = 1800;
 </file>
 
 <file path="src/index.css">
@@ -829,6 +656,121 @@ export default function ProductGrid({ productos }: ProductGridProps) {
       ))}
     </div>
   );
+}
+</file>
+
+<file path="src/context/CartContext.tsx">
+import {
+  createContext,
+  useContext,
+  useState,
+  useMemo,
+  useCallback,
+  useEffect,
+  type ReactNode,
+} from 'react';
+
+export interface ItemCarrito {
+  productoId: string;
+  nombre: string;
+  categoria: string;
+  imagen: string;
+  sku: string;
+  talla: string | null;
+  precio: number;
+  cantidad: number;
+}
+
+interface CartContextValue {
+  items: ItemCarrito[];
+  agregarItem: (item: Omit<ItemCarrito, 'cantidad'>, cantidad?: number) => void;
+  quitarItem: (sku: string) => void;
+  actualizarCantidad: (sku: string, cantidad: number) => void;
+  vaciarCarrito: () => void;
+  totalItems: number;
+  totalPrecio: number;
+}
+
+const CartContext = createContext<CartContextValue | undefined>(undefined);
+
+const STORAGE_KEY = 'arias-carrito-v1';
+
+function cargarCarritoInicial(): ItemCarrito[] {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    return parsed;
+  } catch {
+    return [];
+  }
+}
+
+export function CartProvider({ children }: { children: ReactNode }) {
+  const [items, setItems] = useState<ItemCarrito[]>(cargarCarritoInicial);
+
+  // Guardar en localStorage cada vez que el carrito cambia
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+    } catch {
+      // Si localStorage falla (modo privado, cuota excedida, etc.) el carrito
+      // sigue funcionando en memoria durante la sesión, solo no persiste.
+    }
+  }, [items]);
+
+  const agregarItem = useCallback((nuevo: Omit<ItemCarrito, 'cantidad'>, cantidad = 1) => {
+    setItems((prev) => {
+      const existente = prev.find((i) => i.sku === nuevo.sku);
+      if (existente) {
+        return prev.map((i) =>
+          i.sku === nuevo.sku ? { ...i, cantidad: i.cantidad + cantidad } : i
+        );
+      }
+      return [...prev, { ...nuevo, cantidad }];
+    });
+  }, []);
+
+  const quitarItem = useCallback((sku: string) => {
+    setItems((prev) => prev.filter((i) => i.sku !== sku));
+  }, []);
+
+  const actualizarCantidad = useCallback((sku: string, cantidad: number) => {
+    if (cantidad < 1) return;
+    setItems((prev) => prev.map((i) => (i.sku === sku ? { ...i, cantidad } : i)));
+  }, []);
+
+  const vaciarCarrito = useCallback(() => {
+    setItems([]);
+  }, []);
+
+  const totalItems = useMemo(() => items.reduce((sum, i) => sum + i.cantidad, 0), [items]);
+  const totalPrecio = useMemo(
+    () => items.reduce((sum, i) => sum + i.precio * i.cantidad, 0),
+    [items]
+  );
+
+  const value = useMemo(
+    () => ({
+      items,
+      agregarItem,
+      quitarItem,
+      actualizarCantidad,
+      vaciarCarrito,
+      totalItems,
+      totalPrecio,
+    }),
+    [items, agregarItem, quitarItem, actualizarCantidad, vaciarCarrito, totalItems, totalPrecio]
+  );
+
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
+}
+
+export function useCart() {
+  const ctx = useContext(CartContext);
+  if (!ctx) throw new Error('useCart debe usarse dentro de <CartProvider>');
+  return ctx;
 }
 </file>
 
@@ -1635,222 +1577,139 @@ export const productos: Producto[] = [
 export const categorias = Array.from(new Set(productos.map(p => p.categoria))).sort();
 </file>
 
-<file path="src/pages/ProductDetail.tsx">
-import { useEffect, useMemo, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import { ShoppingCart, Check, ChevronLeft, Minus, Plus } from 'lucide-react';
-import { productos } from '../data/productos';
-import Badge from '../components/ui/Badge';
-import Button from '../components/ui/Button';
-import ProductGrid from '../components/product/ProductGrid';
+<file path="src/pages/Carrito.tsx">
+import { Link } from 'react-router-dom';
+import { Trash2, Minus, Plus, MessageCircle } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import Button from '../components/ui/Button';
+import { formatCLP } from '../utils/format';
+import { WHATSAPP_NUMERO, WHATSAPP_MENSAJE_MAX_LARGO } from '../config';
 
-const ORDEN_TALLAS = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'];
+export default function Carrito() {
+  const { items, quitarItem, actualizarCantidad, totalItems, totalPrecio } = useCart();
 
-function ordenarPorTalla<T extends { talla: string | null }>(variantes: T[]): T[] {
-  return [...variantes].sort((a, b) => {
-    const ia = a.talla ? ORDEN_TALLAS.indexOf(a.talla) : 999;
-    const ib = b.talla ? ORDEN_TALLAS.indexOf(b.talla) : 999;
-    if (ia === -1 && ib === -1) return 0;
-    if (ia === -1) return 1;
-    if (ib === -1) return -1;
-    return ia - ib;
-  });
-}
+  function generarMensajeWhatsApp() {
+    let mensaje = `Hola, quisiera cotizar los siguientes productos:\n\n`;
+    items.forEach((item, i) => {
+      mensaje += `${i + 1}. ${item.nombre}\n`;
+      mensaje += `   Talla: ${item.talla ?? 'Única'} | SKU: ${item.sku}\n`;
+      mensaje += `   Cantidad: ${item.cantidad} | Precio unitario: ${formatCLP(item.precio)}\n\n`;
+    });
+    mensaje += `Total estimado: ${formatCLP(totalPrecio)}\n\n`;
+    mensaje += `Quedo atento/a a la confirmación. Gracias.`;
 
-function formatCLP(valor: number) {
-  return new Intl.NumberFormat('es-CL', {
-    style: 'currency',
-    currency: 'CLP',
-    maximumFractionDigits: 0,
-  }).format(valor);
-}
+    // Si el mensaje queda demasiado largo (carritos con muchos productos),
+    // WhatsApp puede truncar o fallar el link silenciosamente. En ese caso,
+    // enviamos un resumen más corto en vez del detalle línea por línea.
+    if (mensaje.length > WHATSAPP_MENSAJE_MAX_LARGO) {
+      let resumen = `Hola, quisiera cotizar ${totalItems} productos de mi carrito:\n\n`;
+      items.forEach((item, i) => {
+        resumen += `${i + 1}. ${item.nombre} (Talla ${item.talla ?? 'Única'}, x${item.cantidad})\n`;
+      });
+      resumen += `\nTotal estimado: ${formatCLP(totalPrecio)}\n\nQuedo atento/a a la confirmación. Gracias.`;
+      return encodeURIComponent(resumen);
+    }
 
-export default function ProductDetail() {
-  const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
-  const producto = useMemo(() => productos.find((p) => p.id === id), [id]);
-  const [tallaSeleccionada, setTallaSeleccionada] = useState<string | null>(null);
-  const { agregarItem } = useCart();
-  const [agregado, setAgregado] = useState(false);
-  const [cantidad, setCantidad] = useState(1);
+    return encodeURIComponent(mensaje);
+  }
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
-    setCantidad(1);
-  }, [id]);
+  const linkWhatsApp = `https://wa.me/${WHATSAPP_NUMERO}?text=${generarMensajeWhatsApp()}`;
 
-  if (!producto) {
+  if (items.length === 0) {
     return (
-      <div className="max-w-3xl mx-auto px-6 py-20 text-center">
-        <h1 className="text-2xl font-bold text-[#112433]">Producto no encontrado</h1>
+      <div className="max-w-2xl mx-auto px-6 py-24 text-center">
+        <h1 className="text-2xl font-bold text-[#112433]">Tu carrito está vacío</h1>
         <p className="text-[#112433]/60 mt-2">
-          Puede que el enlace sea incorrecto o el producto ya no esté disponible.
+          Agrega productos desde el catálogo para cotizarlos aquí.
         </p>
-        <Button className="mt-6" onClick={() => navigate('/catalogo')}>
-          Volver al catálogo
-        </Button>
+        <Link to="/catalogo" className="inline-block mt-6">
+          <Button variant="primary">Ver catálogo</Button>
+        </Link>
       </div>
     );
   }
 
-  const variantesOrdenadas = ordenarPorTalla(producto.variantes);
-  const varianteActiva =
-    variantesOrdenadas.find((v) => v.talla === tallaSeleccionada) ?? variantesOrdenadas[0];
-
-  const precioDesde = Math.min(...producto.variantes.map((v) => v.precio2026));
-  const relacionados = productos
-    .filter((p) => p.id !== producto.id && p.categoria === producto.categoria)
-    .slice(0, 4);
-
   return (
-    <div className="max-w-6xl mx-auto px-6 py-10">
-      {/* Breadcrumb */}
-      <nav className="text-sm text-[#112433]/50 mb-6 flex items-center gap-1.5 flex-wrap">
-        <Link to="/" className="hover:text-[#112433] transition-colors">
-          Inicio
-        </Link>
-        <span>/</span>
-        <Link to="/catalogo" className="hover:text-[#112433] transition-colors">
-          Catálogo
-        </Link>
-        <span>/</span>
-        <span className="text-[#112433]/80">{producto.categoria}</span>
-      </nav>
+    <div className="max-w-4xl mx-auto px-6 py-10">
+      <h1 className="text-3xl font-bold text-[#112433] mb-1">Carrito de cotización</h1>
+      <p className="text-[#112433]/60 mb-8">
+        {totalItems} producto{totalItems !== 1 ? 's' : ''} seleccionado
+        {totalItems !== 1 ? 's' : ''}
+      </p>
 
-      <button
-        onClick={() => navigate(-1)}
-        className="inline-flex items-center gap-2 text-base font-medium text-[#112433] bg-white hover:bg-[#112433]/5 border border-[#112433]/15 rounded-lg px-4 py-2.5 mb-6 transition-colors"
-      >
-        <ChevronLeft size={20} />
-        Volver
-      </button>
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        {/* Imagen */}
-        <div className="relative bg-[#DCE6EC] rounded-2xl overflow-hidden aspect-4/5">
-          <div className="absolute top-4 left-4 z-10">
-            <Badge tone="category">{producto.categoria}</Badge>
-          </div>
-          {producto.descuentoPct ? (
-            <div className="absolute top-4 right-4 z-10">
-              <Badge tone="discount">{producto.descuentoPct}%</Badge>
+      <div className="flex flex-col gap-4">
+        {items.map((item) => (
+          <div
+            key={item.sku}
+            className="flex items-center gap-4 bg-white rounded-xl border border-[#112433]/8 p-4"
+          >
+            <div className="w-20 h-20 rounded-lg overflow-hidden bg-[#DCE6EC] flex-shrink-0">
+              <img
+                src={item.imagen}
+                alt={item.nombre}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src =
+                    'https://placehold.co/200x200/112433/F5F9FB?text=Sin+imagen';
+                }}
+              />
             </div>
-          ) : null}
-          <img
-            src={producto.imagen}
-            alt={producto.nombre}
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src =
-                'https://placehold.co/600x750/112433/F5F9FB?text=Sin+imagen';
-            }}
-          />
-        </div>
 
-        {/* Info */}
-        <div className="flex flex-col">
-          <p className="text-xs font-semibold text-[#0098C9] uppercase tracking-wide mb-2">
-            {producto.genero}
-          </p>
-          <h1 className="text-2xl md:text-3xl font-bold text-[#112433] leading-tight">
-            {producto.nombre}
-          </h1>
-
-          {producto.color && (
-            <p className="text-sm text-[#112433]/60 mt-2">
-              Color: <span className="font-medium text-[#112433]">{producto.color}</span>
-            </p>
-          )}
-
-          <div className="mt-6 pt-6 border-t border-[#112433]/8">
-            <p className="text-xs text-[#112433]/50 uppercase tracking-wide">Precio desde</p>
-            <p className="text-3xl font-bold text-[#112433] mt-1">{formatCLP(precioDesde)}</p>
-            <p className="text-xs text-[#112433]/40 mt-1">Precios 2026, referenciales por talla/SKU</p>
-          </div>
-
-          {/* Selector de talla */}
-          <div className="mt-6">
-            <p className="text-sm font-medium text-[#112433] mb-2">Talla</p>
-            <div className="flex flex-wrap gap-2">
-              {variantesOrdenadas.map((v) => (
-                <button
-                  key={v.sku}
-                  onClick={() => setTallaSeleccionada(v.talla)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium border transition-colors ${
-                    varianteActiva.sku === v.sku
-                      ? 'bg-[#112433] text-white border-[#112433]'
-                      : 'bg-white text-[#112433] border-[#112433]/20 hover:border-[#112433]/50'
-                  }`}
-                >
-                  {v.talla ?? 'Única'}
-                </button>
-              ))}
+            <div className="flex-1 min-w-0">
+              <p className="font-semibold text-[#112433] text-sm leading-snug truncate">
+                {item.nombre}
+              </p>
+              <p className="text-xs text-[#112433]/50 mt-0.5">
+                Talla: {item.talla ?? 'Única'} · SKU: {item.sku}
+              </p>
+              <p className="text-sm font-bold text-[#112433] mt-1">
+                {formatCLP(item.precio)}
+              </p>
             </div>
-          </div>
 
-          {/* Selector de cantidad */}
-          <div className="mt-6">
-            <p className="text-sm font-medium text-[#112433] mb-2">Cantidad</p>
-            <div className="inline-flex items-center gap-3 border border-[#112433]/20 rounded-lg px-3 py-2">
+            {/* Selector de cantidad */}
+            <div className="flex items-center gap-2 border border-[#112433]/15 rounded-lg px-2 py-1">
               <button
-                onClick={() => setCantidad((c) => Math.max(1, c - 1))}
+                onClick={() => actualizarCantidad(item.sku, item.cantidad - 1)}
                 className="text-[#112433]/60 hover:text-[#112433] p-1"
                 aria-label="Disminuir cantidad"
               >
-                <Minus size={16} />
+                <Minus size={14} />
               </button>
-              <span className="text-base font-semibold w-6 text-center">{cantidad}</span>
+              <span className="text-sm font-medium w-5 text-center">{item.cantidad}</span>
               <button
-                onClick={() => setCantidad((c) => c + 1)}
+                onClick={() => actualizarCantidad(item.sku, item.cantidad + 1)}
                 className="text-[#112433]/60 hover:text-[#112433] p-1"
                 aria-label="Aumentar cantidad"
               >
-                <Plus size={16} />
+                <Plus size={14} />
               </button>
             </div>
-          </div>
 
-          <div className="mt-6 flex gap-3">
-            <Button
-              size="lg"
-              className="flex-1"
-              onClick={() => {
-                agregarItem(
-                  {
-                    productoId: producto.id,
-                    nombre: producto.nombre,
-                    categoria: producto.categoria,
-                    imagen: producto.imagen,
-                    sku: varianteActiva.sku,
-                    talla: varianteActiva.talla,
-                    precio: varianteActiva.precio2026,
-                  },
-                  cantidad
-                );
-                setAgregado(true);
-                setTimeout(() => setAgregado(false), 2000);
-              }}
+            <button
+              onClick={() => quitarItem(item.sku)}
+              className="text-[#112433]/40 hover:text-red-500 transition-colors p-2"
+              aria-label="Quitar del carrito"
             >
-              {agregado ? <Check size={18} /> : <ShoppingCart size={18} />}
-              <span>{agregado ? 'Agregado al carrito' : 'Agregar al carrito'}</span>
-            </Button>
+              <Trash2 size={18} />
+            </button>
           </div>
-
-          {/* SKU actual */}
-          <p className="text-xs text-[#112433]/40 mt-4">SKU: {varianteActiva.sku}</p>
-        </div>
+        ))}
       </div>
 
-      {/* Relacionados */}
-      {relacionados.length > 0 && (
-        <div className="mt-14">
-          <h2 className="text-lg font-bold text-[#112433] mb-4">
-            Más de {producto.categoria}
-          </h2>
-          <ProductGrid productos={relacionados} />
+      {/* Resumen y cotización */}
+      <div className="mt-8 bg-[#F5F9FB] rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <p className="text-sm text-[#112433]/50">Total estimado</p>
+          <p className="text-2xl font-bold text-[#112433]">{formatCLP(totalPrecio)}</p>
         </div>
-      )}
+        <a href={linkWhatsApp} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+          <Button variant="primary" size="lg" className="w-full sm:w-auto">
+            <MessageCircle size={18} />
+            Solicitar cotización por WhatsApp
+          </Button>
+        </a>
+      </div>
     </div>
   );
 }
@@ -2048,88 +1907,6 @@ export default function FilterBar({
 }
 </file>
 
-<file path="src/components/product/ProductCard.tsx">
-import { Link } from 'react-router-dom';
-import type { Producto } from '../../data/productos';
-import Badge from '../ui/Badge';
-
-interface ProductCardProps {
-  producto: Producto;
-}
-
-const ORDEN_TALLAS = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'];
-
-function formatCLP(valor: number) {
-  return new Intl.NumberFormat('es-CL', {
-    style: 'currency',
-    currency: 'CLP',
-    maximumFractionDigits: 0,
-  }).format(valor);
-}
-
-export default function ProductCard({ producto }: ProductCardProps) {
-  const precioDesde = Math.min(...producto.variantes.map((v) => v.precio2026));
-  const tallas = producto.variantes
-    .map((v) => v.talla)
-    .filter((t): t is string => Boolean(t))
-    .sort((a, b) => ORDEN_TALLAS.indexOf(a) - ORDEN_TALLAS.indexOf(b));
-
-  return (
-    <div className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-[#112433]/5">
-      <div className="absolute top-3 left-3 z-10">
-        <Badge tone="category">{producto.categoria}</Badge>
-      </div>
-
-      {producto.descuentoPct ? (
-        <div className="absolute top-3 right-3 z-10">
-          <Badge tone="discount">{producto.descuentoPct}%</Badge>
-        </div>
-      ) : null}
-
-      <div className="aspect-4/5 bg-[#DCE6EC] overflow-hidden">
-        <img
-          src={producto.imagen}
-          alt={producto.nombre}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          onError={(e) => {
-            (e.target as HTMLImageElement).src =
-              'https://placehold.co/400x500/112433/F5F9FB?text=Sin+imagen';
-          }}
-        />
-      </div>
-
-      <div className="p-4 flex flex-col gap-2">
-        <p className="text-xs font-medium text-[#0098C9] uppercase tracking-wide">
-          {producto.genero}
-        </p>
-        <h3 className="font-semibold text-[#112433] leading-snug line-clamp-2 min-h-[2.6em]">
-          {producto.nombre}
-        </h3>
-
-        {tallas.length > 0 && (
-          <p className="text-xs text-[#112433]/50">
-            Tallas: {tallas.join(', ')}
-          </p>
-        )}
-
-        <div className="flex items-center justify-between mt-2 pt-3 border-t border-[#112433]/8">
-          <div>
-            <p className="text-[10px] text-[#112433]/50 uppercase tracking-wide">Desde</p>
-            <p className="text-lg font-bold text-[#112433]">{formatCLP(precioDesde)}</p>
-          </div>
-          <Link
-            to={`/producto/${producto.id}`}
-            className="px-4 py-2 rounded-lg bg-[#0098C9] text-white text-sm font-semibold hover:bg-[#0084ae] transition-colors shadow-sm hover:shadow-md"
-          >
-            Ver detalle
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
-}
-</file>
-
 <file path="src/components/ui/Badge.tsx">
 import type { ReactNode } from 'react';
 
@@ -2237,12 +2014,288 @@ function App() {
 export default App;
 </file>
 
+<file path="src/pages/ProductDetail.tsx">
+import { useEffect, useMemo, useState } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { ShoppingCart, Check, ChevronLeft, Minus, Plus } from 'lucide-react';
+import { productos } from '../data/productos';
+import Badge from '../components/ui/Badge';
+import Button from '../components/ui/Button';
+import ProductGrid from '../components/product/ProductGrid';
+import { useCart } from '../context/CartContext';
+import { formatCLP, ordenarPorTalla } from '../utils/format';
+
+export default function ProductDetail() {
+  const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
+  const producto = useMemo(() => productos.find((p) => p.id === id), [id]);
+  const [tallaSeleccionada, setTallaSeleccionada] = useState<string | null>(null);
+  const { agregarItem } = useCart();
+  const [agregado, setAgregado] = useState(false);
+  const [cantidad, setCantidad] = useState(1);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    setCantidad(1);
+  }, [id]);
+
+  if (!producto) {
+    return (
+      <div className="max-w-3xl mx-auto px-6 py-20 text-center">
+        <h1 className="text-2xl font-bold text-[#112433]">Producto no encontrado</h1>
+        <p className="text-[#112433]/60 mt-2">
+          Puede que el enlace sea incorrecto o el producto ya no esté disponible.
+        </p>
+        <Button className="mt-6" onClick={() => navigate('/catalogo')}>
+          Volver al catálogo
+        </Button>
+      </div>
+    );
+  }
+
+  const variantesOrdenadas = ordenarPorTalla(producto.variantes);
+  const varianteActiva =
+    variantesOrdenadas.find((v) => v.talla === tallaSeleccionada) ?? variantesOrdenadas[0];
+
+  const precioDesde = Math.min(...producto.variantes.map((v) => v.precio2026));
+  const relacionados = productos
+    .filter((p) => p.id !== producto.id && p.categoria === producto.categoria)
+    .slice(0, 4);
+
+  return (
+    <div className="max-w-6xl mx-auto px-6 py-10">
+      {/* Breadcrumb */}
+      <nav className="text-sm text-[#112433]/50 mb-6 flex items-center gap-1.5 flex-wrap">
+        <Link to="/" className="hover:text-[#112433] transition-colors">
+          Inicio
+        </Link>
+        <span>/</span>
+        <Link to="/catalogo" className="hover:text-[#112433] transition-colors">
+          Catálogo
+        </Link>
+        <span>/</span>
+        <span className="text-[#112433]/80">{producto.categoria}</span>
+      </nav>
+
+      <button
+        onClick={() => navigate(-1)}
+        className="inline-flex items-center gap-2 text-base font-medium text-[#112433] bg-white hover:bg-[#112433]/5 border border-[#112433]/15 rounded-lg px-4 py-2.5 mb-6 transition-colors"
+      >
+        <ChevronLeft size={20} />
+        Volver
+      </button>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        {/* Imagen */}
+        <div className="relative bg-[#DCE6EC] rounded-2xl overflow-hidden aspect-4/5">
+          <div className="absolute top-4 left-4 z-10">
+            <Badge tone="category">{producto.categoria}</Badge>
+          </div>
+          {producto.descuentoPct ? (
+            <div className="absolute top-4 right-4 z-10">
+              <Badge tone="discount">{producto.descuentoPct}%</Badge>
+            </div>
+          ) : null}
+          <img
+            src={producto.imagen}
+            alt={producto.nombre}
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              (e.target as HTMLImageElement).src =
+                'https://placehold.co/600x750/112433/F5F9FB?text=Sin+imagen';
+            }}
+          />
+        </div>
+
+        {/* Info */}
+        <div className="flex flex-col">
+          <p className="text-xs font-semibold text-[#0098C9] uppercase tracking-wide mb-2">
+            {producto.genero}
+          </p>
+          <h1 className="text-2xl md:text-3xl font-bold text-[#112433] leading-tight">
+            {producto.nombre}
+          </h1>
+
+          {producto.color && (
+            <p className="text-sm text-[#112433]/60 mt-2">
+              Color: <span className="font-medium text-[#112433]">{producto.color}</span>
+            </p>
+          )}
+
+          <div className="mt-6 pt-6 border-t border-[#112433]/8">
+            <p className="text-xs text-[#112433]/50 uppercase tracking-wide">Precio desde</p>
+            <p className="text-3xl font-bold text-[#112433] mt-1">{formatCLP(precioDesde)}</p>
+            <p className="text-xs text-[#112433]/40 mt-1">Precios 2026, referenciales por talla/SKU</p>
+          </div>
+
+          {/* Selector de talla */}
+          <div className="mt-6">
+            <p className="text-sm font-medium text-[#112433] mb-2">Talla</p>
+            <div className="flex flex-wrap gap-2">
+              {variantesOrdenadas.map((v) => (
+                <button
+                  key={v.sku}
+                  onClick={() => setTallaSeleccionada(v.talla)}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium border transition-colors ${
+                    varianteActiva.sku === v.sku
+                      ? 'bg-[#112433] text-white border-[#112433]'
+                      : 'bg-white text-[#112433] border-[#112433]/20 hover:border-[#112433]/50'
+                  }`}
+                >
+                  {v.talla ?? 'Única'}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Selector de cantidad */}
+          <div className="mt-6">
+            <p className="text-sm font-medium text-[#112433] mb-2">Cantidad</p>
+            <div className="inline-flex items-center gap-3 border border-[#112433]/20 rounded-lg px-3 py-2">
+              <button
+                onClick={() => setCantidad((c) => Math.max(1, c - 1))}
+                className="text-[#112433]/60 hover:text-[#112433] p-1"
+                aria-label="Disminuir cantidad"
+              >
+                <Minus size={16} />
+              </button>
+              <span className="text-base font-semibold w-6 text-center">{cantidad}</span>
+              <button
+                onClick={() => setCantidad((c) => c + 1)}
+                className="text-[#112433]/60 hover:text-[#112433] p-1"
+                aria-label="Aumentar cantidad"
+              >
+                <Plus size={16} />
+              </button>
+            </div>
+          </div>
+
+          <div className="mt-6 flex gap-3">
+            <Button
+              size="lg"
+              className="flex-1"
+              onClick={() => {
+                agregarItem(
+                  {
+                    productoId: producto.id,
+                    nombre: producto.nombre,
+                    categoria: producto.categoria,
+                    imagen: producto.imagen,
+                    sku: varianteActiva.sku,
+                    talla: varianteActiva.talla,
+                    precio: varianteActiva.precio2026,
+                  },
+                  cantidad
+                );
+                setAgregado(true);
+                setTimeout(() => setAgregado(false), 2000);
+              }}
+            >
+              {agregado ? <Check size={18} /> : <ShoppingCart size={18} />}
+              <span>{agregado ? 'Agregado al carrito' : 'Agregar al carrito'}</span>
+            </Button>
+          </div>
+
+          {/* SKU actual */}
+          <p className="text-xs text-[#112433]/40 mt-4">SKU: {varianteActiva.sku}</p>
+        </div>
+      </div>
+
+      {/* Relacionados */}
+      {relacionados.length > 0 && (
+        <div className="mt-14">
+          <h2 className="text-lg font-bold text-[#112433] mb-4">
+            Más de {producto.categoria}
+          </h2>
+          <ProductGrid productos={relacionados} />
+        </div>
+      )}
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/product/ProductCard.tsx">
+import { Link } from 'react-router-dom';
+import type { Producto } from '../../data/productos';
+import Badge from '../ui/Badge';
+import { formatCLP, ordenarPorTalla } from '../../utils/format';
+
+interface ProductCardProps {
+  producto: Producto;
+}
+
+export default function ProductCard({ producto }: ProductCardProps) {
+  const precioDesde = Math.min(...producto.variantes.map((v) => v.precio2026));
+  const tallas = ordenarPorTalla(producto.variantes)
+    .map((v) => v.talla)
+    .filter((t): t is string => Boolean(t));
+
+  return (
+    <div className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-[#112433]/5">
+      <div className="absolute top-3 left-3 z-10">
+        <Badge tone="category">{producto.categoria}</Badge>
+      </div>
+
+      {producto.descuentoPct ? (
+        <div className="absolute top-3 right-3 z-10">
+          <Badge tone="discount">{producto.descuentoPct}%</Badge>
+        </div>
+      ) : null}
+
+      <div className="aspect-4/5 bg-[#DCE6EC] overflow-hidden">
+        <img
+          src={producto.imagen}
+          alt={producto.nombre}
+          loading="lazy"
+          decoding="async"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          onError={(e) => {
+            (e.target as HTMLImageElement).src =
+              'https://placehold.co/400x500/112433/F5F9FB?text=Sin+imagen';
+          }}
+        />
+      </div>
+
+      <div className="p-4 flex flex-col gap-2">
+        <p className="text-xs font-medium text-[#0098C9] uppercase tracking-wide">
+          {producto.genero}
+        </p>
+        <h3 className="font-semibold text-[#112433] leading-snug line-clamp-2 min-h-[2.6em]">
+          {producto.nombre}
+        </h3>
+
+        {tallas.length > 0 && (
+          <p className="text-xs text-[#112433]/50">
+            Tallas: {tallas.join(', ')}
+          </p>
+        )}
+
+        <div className="flex items-center justify-between mt-2 pt-3 border-t border-[#112433]/8">
+          <div>
+            <p className="text-[10px] text-[#112433]/50 uppercase tracking-wide">Desde</p>
+            <p className="text-lg font-bold text-[#112433]">{formatCLP(precioDesde)}</p>
+          </div>
+          <Link
+            to={`/producto/${producto.id}`}
+            className="px-4 py-2 rounded-lg bg-[#0098C9] text-white text-sm font-semibold hover:bg-[#0084ae] transition-colors shadow-sm hover:shadow-md"
+          >
+            Ver detalle
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+</file>
+
 <file path="src/pages/Home.tsx">
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Clock, CheckCircle2, Package, Warehouse, ShieldCheck } from 'lucide-react';
 import { productos } from '../data/productos';
 import ProductGrid from '../components/product/ProductGrid';
 import Button from '../components/ui/Button';
+import { WHATSAPP_NUMERO } from '../config';
 
 const CLIENTES = ['Equans', 'Movistar', 'CGE', 'ENEL', 'Minera Escondida', 'Collahuasi', 'El Abra'];
 
@@ -2426,7 +2479,7 @@ export default function Home() {
             </div>
 
             <a
-              href="https://wa.me/56997331565"
+              href={`https://wa.me/${WHATSAPP_NUMERO}`}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2"
