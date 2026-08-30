@@ -46,7 +46,7 @@ export default function ProductDetail() {
     .slice(0, 4);
 
   return (
-    <div className="max-w-6xl mx-auto px-6 py-10">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
       {/* Breadcrumb */}
       <nav className="text-sm text-[#112433]/50 mb-6 flex items-center gap-1.5 flex-wrap">
         <Link to="/" className="hover:text-[#112433] transition-colors">

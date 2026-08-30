@@ -1,14 +1,20 @@
 import { Link } from 'react-router-dom';
-import { Trash2, Minus, Plus, MessageCircle } from 'lucide-react';
+import { Trash2, Minus, Plus, MessageCircle, Mail } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import Button from '../components/ui/Button';
 import { formatCLP } from '../utils/format';
-import { WHATSAPP_NUMERO, WHATSAPP_MENSAJE_MAX_LARGO } from '../config';
+import {
+  WHATSAPP_NUMERO,
+  WHATSAPP_MENSAJE_MAX_LARGO,
+  CONTACTO_EMAIL,
+  EMAIL_MENSAJE_MAX_LARGO,
+} from '../config';
 
 export default function Carrito() {
   const { items, quitarItem, actualizarCantidad, totalItems, totalPrecio } = useCart();
 
-  function generarMensajeWhatsApp() {
+  // Texto completo, detallado, de la cotización
+  function generarMensajeDetallado() {
     let mensaje = `Hola, quisiera cotizar los siguientes productos:\n\n`;
     items.forEach((item, i) => {
       mensaje += `${i + 1}. ${item.nombre}\n`;
@@ -17,23 +23,46 @@ export default function Carrito() {
     });
     mensaje += `Total estimado: ${formatCLP(totalPrecio)}\n\n`;
     mensaje += `Quedo atento/a a la confirmación. Gracias.`;
-
-    // Si el mensaje queda demasiado largo (carritos con muchos productos),
-    // WhatsApp puede truncar o fallar el link silenciosamente. En ese caso,
-    // enviamos un resumen más corto en vez del detalle línea por línea.
-    if (mensaje.length > WHATSAPP_MENSAJE_MAX_LARGO) {
-      let resumen = `Hola, quisiera cotizar ${totalItems} productos de mi carrito:\n\n`;
-      items.forEach((item, i) => {
-        resumen += `${i + 1}. ${item.nombre} (Talla ${item.talla ?? 'Única'}, x${item.cantidad})\n`;
-      });
-      resumen += `\nTotal estimado: ${formatCLP(totalPrecio)}\n\nQuedo atento/a a la confirmación. Gracias.`;
-      return encodeURIComponent(resumen);
-    }
-
-    return encodeURIComponent(mensaje);
+    return mensaje;
   }
 
-  const linkWhatsApp = `https://wa.me/${WHATSAPP_NUMERO}?text=${generarMensajeWhatsApp()}`;
+  // Versión corta (resumen) para cuando el detalle supera el límite seguro del canal
+  function generarMensajeResumido() {
+    let resumen = `Hola, quisiera cotizar ${totalItems} productos de mi carrito:\n\n`;
+    items.forEach((item, i) => {
+      resumen += `${i + 1}. ${item.nombre} (Talla ${item.talla ?? 'Única'}, x${item.cantidad})\n`;
+    });
+    resumen += `\nTotal estimado: ${formatCLP(totalPrecio)}\n\nQuedo atento/a a la confirmación. Gracias.`;
+    return resumen;
+  }
+
+  const mensajeDetallado = generarMensajeDetallado();
+
+  const linkWhatsApp = (() => {
+    const texto =
+      mensajeDetallado.length > WHATSAPP_MENSAJE_MAX_LARGO
+        ? generarMensajeResumido()
+        : mensajeDetallado;
+    return `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(texto)}`;
+  })();
+
+  const linkCorreo = (() => {
+    const texto =
+      mensajeDetallado.length > EMAIL_MENSAJE_MAX_LARGO
+        ? generarMensajeResumido()
+        : mensajeDetallado;
+    const asunto = `Solicitud de cotización - ${totalItems} producto${totalItems !== 1 ? 's' : ''}`;
+    // Gmail web compose: no depende de tener una app de correo instalada/configurada,
+    // que es el motivo más común de que "no pase nada" al usar mailto:
+    const params = new URLSearchParams({
+      view: 'cm',
+      fs: '1',
+      to: CONTACTO_EMAIL,
+      su: asunto,
+      body: texto,
+    });
+    return `https://mail.google.com/mail/?${params.toString()}`;
+  })();
 
   if (items.length === 0) {
     return (
@@ -61,7 +90,7 @@ export default function Carrito() {
         {items.map((item) => (
           <div
             key={item.sku}
-            className="flex items-center gap-4 bg-white rounded-xl border border-[#112433]/8 p-4"
+            className="flex flex-wrap sm:flex-nowrap items-center gap-4 bg-white rounded-xl border border-[#112433]/8 p-4"
           >
             <div className="w-20 h-20 rounded-lg overflow-hidden bg-[#DCE6EC] flex-shrink-0">
               <img
@@ -75,7 +104,7 @@ export default function Carrito() {
               />
             </div>
 
-            <div className="flex-1 min-w-0">
+            <div className="flex-1 min-w-[140px]">
               <p className="font-semibold text-[#112433] text-sm leading-snug truncate">
                 {item.nombre}
               </p>
@@ -118,17 +147,26 @@ export default function Carrito() {
       </div>
 
       {/* Resumen y cotización */}
-      <div className="mt-8 bg-[#F5F9FB] rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="mt-8 bg-[#F5F9FB] rounded-2xl p-6 flex flex-col gap-5">
         <div>
           <p className="text-sm text-[#112433]/50">Total estimado</p>
           <p className="text-2xl font-bold text-[#112433]">{formatCLP(totalPrecio)}</p>
         </div>
-        <a href={linkWhatsApp} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-          <Button variant="primary" size="lg" className="w-full sm:w-auto">
-            <MessageCircle size={18} />
-            Solicitar cotización por WhatsApp
-          </Button>
-        </a>
+
+        <div className="flex flex-col sm:flex-row gap-3">
+          <a href={linkWhatsApp} target="_blank" rel="noopener noreferrer" className="flex-1">
+            <Button variant="primary" size="lg" className="w-full">
+              <MessageCircle size={18} />
+              Cotizar por WhatsApp
+            </Button>
+          </a>
+          <a href={linkCorreo} target="_blank" rel="noopener noreferrer" className="flex-1">
+            <Button variant="outline" size="lg" className="w-full">
+              <Mail size={18} />
+              Cotizar por correo
+            </Button>
+          </a>
+        </div>
       </div>
     </div>
   );

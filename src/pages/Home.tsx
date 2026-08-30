@@ -14,13 +14,13 @@ export default function Home() {
     <div>
       {/* Hero */}
       <section className="bg-[#112433] text-white overflow-hidden relative">
-        <div className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
           {/* Columna texto */}
           <div className="flex flex-col items-start gap-5">
             <span className="text-[#FE8900] font-bold text-sm uppercase tracking-wide">
               15 años abasteciendo a la gran minería y las telecomunicaciones
             </span>
-            <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight">
+            <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight">
               Ahora, a tu servicio
             </h1>
             <p className="text-white/70 leading-relaxed">
@@ -41,24 +41,24 @@ export default function Home() {
 
           {/* Columna panel de cifras */}
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm">
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-6 backdrop-blur-sm">
               <Warehouse size={26} className="text-[#0098C9] mb-3" />
-              <p className="text-2xl font-extrabold">3.000 m²</p>
+              <p className="text-xl sm:text-2xl font-extrabold">3.000 m²</p>
               <p className="text-xs text-white/60 mt-1">Centro de distribución operado</p>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm">
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-6 backdrop-blur-sm">
               <Package size={26} className="text-[#0098C9] mb-3" />
-              <p className="text-2xl font-extrabold">$600MM+</p>
+              <p className="text-xl sm:text-2xl font-extrabold">$600MM+</p>
               <p className="text-xs text-white/60 mt-1">En inventario gestionado</p>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm">
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-6 backdrop-blur-sm">
               <ShieldCheck size={26} className="text-[#FE8900] mb-3" />
-              <p className="text-2xl font-extrabold">15 años</p>
+              <p className="text-xl sm:text-2xl font-extrabold">15 años</p>
               <p className="text-xs text-white/60 mt-1">De experiencia en terreno</p>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm">
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-6 backdrop-blur-sm">
               <CheckCircle2 size={26} className="text-[#FE8900] mb-3" />
-              <p className="text-2xl font-extrabold">SAP</p>
+              <p className="text-xl sm:text-2xl font-extrabold">SAP</p>
               <p className="text-xs text-white/60 mt-1">Estándar de trazabilidad</p>
             </div>
           </div>
@@ -71,7 +71,7 @@ export default function Home() {
 
       {/* Clientes / credibilidad */}
       <section className="bg-[#0098C9]/5 border-b border-[#112433]/8">
-        <div className="max-w-7xl mx-auto px-6 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
           <p className="text-xs text-[#112433]/50 uppercase tracking-wide mb-3 text-center">
             Experiencia liderando operaciones para
           </p>
@@ -86,7 +86,7 @@ export default function Home() {
       </section>
 
       {/* Destacados */}
-      <section className="max-w-7xl mx-auto px-6 py-14">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold text-[#112433]">Productos destacados</h2>
           <Link to="/catalogo" className="text-sm font-medium text-[#0098C9] hover:underline">
@@ -98,7 +98,7 @@ export default function Home() {
 
       {/* Propuesta de valor / servicio logístico */}
       <section className="bg-[#F5F9FB] border-y border-[#112433]/8">
-        <div className="max-w-5xl mx-auto px-6 py-16">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
           <span className="text-[#0098C9] font-semibold text-sm uppercase tracking-wide">
             ARIAS Supply &amp; Logistics
           </span>
@@ -133,7 +133,7 @@ export default function Home() {
       </section>
 
       {/* Contacto y ubicación */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
         <span className="text-[#0098C9] font-semibold text-sm uppercase tracking-wide">
           Contacto
         </span>
@@ -160,7 +160,7 @@ export default function Home() {
               </div>
               <div>
                 <p className="text-sm text-[#112433]/50">Correo</p>
-                <p className="font-medium text-[#112433]">contacto@ariasupplylogistics.cl</p>
+                <p className="font-medium text-[#112433]">Logistica.jarias@gmail.com</p>
               </div>
             </div>
 
