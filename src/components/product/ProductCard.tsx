@@ -31,7 +31,7 @@ export default function ProductCard({ producto }: ProductCardProps) {
           alt={producto.nombre}
           loading="lazy"
           decoding="async"
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-contain p-3 group-hover:scale-105 transition-transform duration-500"
           onError={(e) => {
             (e.target as HTMLImageElement).src =
               'https://placehold.co/400x500/112433/F5F9FB?text=Sin+imagen';

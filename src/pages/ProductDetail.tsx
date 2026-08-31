@@ -82,7 +82,7 @@ export default function ProductDetail() {
           <img
             src={producto.imagen}
             alt={producto.nombre}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain p-6"
             onError={(e) => {
               (e.target as HTMLImageElement).src =
                 'https://placehold.co/600x750/112433/F5F9FB?text=Sin+imagen';
@@ -109,6 +109,12 @@ export default function ProductDetail() {
             <p className="text-xs text-[#112433]/50 uppercase tracking-wide">Precio desde</p>
             <p className="text-3xl font-bold text-[#112433] mt-1">{formatCLP(precioDesde)}</p>
             <p className="text-xs text-[#112433]/40 mt-1">Precios 2026, referenciales por talla/SKU</p>
+          </div>
+
+          {/* Descripción */}
+          <div className="mt-6">
+            <p className="text-sm font-medium text-[#112433] mb-2">Descripción</p>
+            <p className="text-sm text-[#112433]/70 leading-relaxed">{producto.descripcion}</p>
           </div>
 
           {/* Selector de talla */}

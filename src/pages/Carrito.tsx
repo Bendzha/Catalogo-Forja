@@ -46,22 +46,28 @@ export default function Carrito() {
     return `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(texto)}`;
   })();
 
+  const esMovil = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+
   const linkCorreo = (() => {
     const texto =
       mensajeDetallado.length > EMAIL_MENSAJE_MAX_LARGO
         ? generarMensajeResumido()
         : mensajeDetallado;
     const asunto = `Solicitud de cotización - ${totalItems} producto${totalItems !== 1 ? 's' : ''}`;
-    // Gmail web compose: no depende de tener una app de correo instalada/configurada,
-    // que es el motivo más común de que "no pase nada" al usar mailto:
-    const params = new URLSearchParams({
-      view: 'cm',
-      fs: '1',
-      to: CONTACTO_EMAIL,
-      su: asunto,
-      body: texto,
-    });
-    return `https://mail.google.com/mail/?${params.toString()}`;
+
+    if (esMovil) {
+      // En celular, mailto: activa la app de Gmail (si está instalada) directo
+      // en modo compose. El link web de Gmail no funciona igual en móvil.
+      return `mailto:${CONTACTO_EMAIL}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(texto)}`;
+    }
+
+    // En computador, Gmail web compose (requiere sesión de Google iniciada en el navegador)
+    return (
+      `https://mail.google.com/mail/?view=cm&fs=1` +
+      `&to=${encodeURIComponent(CONTACTO_EMAIL)}` +
+      `&su=${encodeURIComponent(asunto)}` +
+      `&body=${encodeURIComponent(texto)}`
+    );
   })();
 
   if (items.length === 0) {
@@ -96,7 +102,7 @@ export default function Carrito() {
               <img
                 src={item.imagen}
                 alt={item.nombre}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain p-1"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src =
                     'https://placehold.co/200x200/112433/F5F9FB?text=Sin+imagen';
@@ -160,7 +166,12 @@ export default function Carrito() {
               Cotizar por WhatsApp
             </Button>
           </a>
-          <a href={linkCorreo} target="_blank" rel="noopener noreferrer" className="flex-1">
+          <a
+            href={linkCorreo}
+            target={esMovil ? undefined : '_blank'}
+            rel={esMovil ? undefined : 'noopener noreferrer'}
+            className="flex-1"
+          >
             <Button variant="outline" size="lg" className="w-full">
               <Mail size={18} />
               Cotizar por correo

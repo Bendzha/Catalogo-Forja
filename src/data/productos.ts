@@ -18,6 +18,7 @@ export interface Producto {
   descuentoPct: number | null;
   fichaTecnica: string | null;
   imagen: string;
+  descripcion: string;
   variantes: Variante[];
 }
 
@@ -32,6 +33,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "BLUSA EQUANS MUJER 100% ALGODÓN BLANCA.pdf",
     imagen: "/images/prod-001.jpeg",
+    descripcion: "Tela oxford 100% Algodón Botones a tono Peso 180 gr/ml Costura reforzada, terminación tajali.",
     variantes: [
       { sku: "1000074787", talla: "L", precio2026: 17950, precio2027: 17950 },
       { sku: "1000074790", talla: "M", precio2026: 17950, precio2027: 17950 },
@@ -50,6 +52,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "BLUSA EQUANS MUJER OXFORD 60% ALGODÓN 40% POLIESTER BLANCA.pdf",
     imagen: "/images/prod-002.jpeg",
+    descripcion: "Tela oxford 60% Algodón – 40% Poliester. Botones a tono Peso 180 gr/ml Costura reforzada, terminación tajali.",
     variantes: [
       { sku: "1000051702", talla: "L", precio2026: 9950, precio2027: 9950 },
       { sku: "1000051703", talla: "M", precio2026: 9950, precio2027: 9950 },
@@ -68,6 +71,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "BLUSA EQUANS MUJER OXFORD 60% ALGODÓN 40% POLIESTER CELESTE.pdf",
     imagen: "/images/prod-003.jpeg",
+    descripcion: "Tela oxford 60% Algodón – 40% Poliester. Botones a tono Peso 180 gr/ml Costura reforzada, terminación tajali.",
     variantes: [
       { sku: "1000051692", talla: "XXL", precio2026: 9950, precio2027: 9950 },
       { sku: "1000051706", talla: "L", precio2026: 9950, precio2027: 9950 },
@@ -86,6 +90,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "CAMISA EQUANS HOMBRE 100% ALGODÓN BLANCA.pdf",
     imagen: "/images/prod-004.jpeg",
+    descripcion: "Tela oxford 100% Algodón Botones a tono Peso 180 gr/ml Costura reforzada, terminación tajali.",
     variantes: [
       { sku: "1000063741", talla: "L", precio2026: 17950, precio2027: 17950 },
       { sku: "1000063742", talla: "M", precio2026: 17950, precio2027: 17950 },
@@ -104,6 +109,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "CAMISA EQUANS HOMBRE 100% ALGODÓN CELESTE.pdf",
     imagen: "/images/prod-005.jpeg",
+    descripcion: "Tela oxford 100% Algodón Botones a tono Peso 180 gr/ml Costura reforzada, terminación tajali.",
     variantes: [
       { sku: "1000051719", talla: "M", precio2026: 17950, precio2027: 17950 },
       { sku: "1000051720", talla: "S", precio2026: 17950, precio2027: 17950 },
@@ -122,6 +128,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "CAMISA EQUANS DENIM 100% ALGODÓN HOMBRE.pdf",
     imagen: "/images/prod-006.jpeg",
+    descripcion: "Tela denim 100% Algodón Peso 220 gr/ml Costura reforzada, terminación tajali.",
     variantes: [
       { sku: "1000051711", talla: "L", precio2026: 16950, precio2027: 16950 },
       { sku: "1000051712", talla: "M", precio2026: 16950, precio2027: 16950 },
@@ -140,6 +147,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "CAMISA EQUANS HOMBRE OXFORD 60% ALGODÓN 40% POLIESTER BLANCA.pdf",
     imagen: "/images/prod-007.jpeg",
+    descripcion: "Tela oxford 60% Algodón – 40% Poliester. Botones a tono Peso 180 gr/ml Costura reforzada, terminación tajali.",
     variantes: [
       { sku: "1000051721", talla: "L", precio2026: 10500, precio2027: 10500 },
       { sku: "1000051722", talla: "M", precio2026: 10500, precio2027: 10500 },
@@ -159,6 +167,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "CAMISA EQUANS HOMBRE OXFORD 60% ALGODÓN 40% POLIESTER CELESTE.pdf",
     imagen: "/images/prod-008.jpeg",
+    descripcion: "Tela oxford 60% Algodón – 40% Poliester. Botones a tono Peso 180 gr/ml Costura reforzada, terminación tajali.",
     variantes: [
       { sku: "1000051725", talla: "XXL", precio2026: 10500, precio2027: 10500 },
       { sku: "1000051726", talla: "L", precio2026: 10500, precio2027: 10500 },
@@ -177,6 +186,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "CHAQUETA EQUANS HOMBRE SOFTCHELL TECNICA .pdf",
     imagen: "/images/prod-009.jpeg",
+    descripcion: "Membrana softshell impermeable 90% Poliester – 10% Spandex. Peso 400 gr/ml Costura reforzadas, cierre central y dos bolsillos con cierre, puño elasacado.",
     variantes: [
       { sku: "1000051745", talla: "L", precio2026: 32950, precio2027: 32950 },
       { sku: "1000051746", talla: "M", precio2026: 32950, precio2027: 32950 },
@@ -196,6 +206,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "CHAQUETA EQUANS MUJER SOFTCHELL TECNICA.pdf",
     imagen: "/images/prod-010.jpeg",
+    descripcion: "Membrana softshell impermeable 90% Poliester – 10% Spandex. Peso 400 gr/ml Costura reforzadas, cierre central y dos bolsillos con cierre, puño elasacado.",
     variantes: [
       { sku: "1000051749", talla: "L", precio2026: 32950, precio2027: 32950 },
       { sku: "1000051750", talla: "M", precio2026: 32950, precio2027: 32950 },
@@ -213,6 +224,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "MICROPOLAR HOLA TA HOMBRE.pdf",
     imagen: "/images/placeholder-micropolar.jpg",
+    descripcion: "Prenda de trabajo de alta calidad, confeccionada con materiales resistentes para uso industrial.",
     variantes: [
       { sku: "1000052141", talla: "L", precio2026: 19950, precio2027: 19950 },
       { sku: "1000052140", talla: "M", precio2026: 19950, precio2027: 19950 },
@@ -231,6 +243,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "MICROPOLAR HOLA TA MUJER.pdf",
     imagen: "/images/placeholder-micropolar.jpg",
+    descripcion: "Prenda de trabajo de alta calidad, confeccionada con materiales resistentes para uso industrial.",
     variantes: [
       { sku: "1000052144", talla: "S", precio2026: 19950, precio2027: 19950 },
       { sku: "1000052145", talla: "L", precio2026: 19950, precio2027: 19950 },
@@ -249,6 +262,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "MICROPOLAR EQUANS HOMBRE .pdf",
     imagen: "/images/prod-013.jpeg",
+    descripcion: "Polar Fleece 100% poliester. Peso 380 gr/ml Costura reforzadas, cierre central y dos bolsillos con cierre, puño elasacado.",
     variantes: [
       { sku: "1000051753", talla: "L", precio2026: 15950, precio2027: 15950 },
       { sku: "1000051754", talla: "M", precio2026: 15950, precio2027: 15950 },
@@ -267,6 +281,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "MICROPOLAR EQUANS MUJER.pdf",
     imagen: "/images/prod-014.jpeg",
+    descripcion: "Polar Fleece 100% poliester. Peso 380 gr/ml Costura reforzadas, cierre central y dos bolsillos con cierre, puño elasacado.",
     variantes: [
       { sku: "1000051758", talla: "L", precio2026: 15950, precio2027: 15950 },
       { sku: "1000051759", talla: "M", precio2026: 15950, precio2027: 15950 },
@@ -285,6 +300,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "PANTALON CARGO 65% POLIESTER 35% ALGODÓN HOLA TA HOMBRE.pdf",
     imagen: "/images/prod-015.jpeg",
+    descripcion: "Sarga gabardina 35% Algodón – 65% Poliester. Peso 250 gr/ml Costura reforzadas, cierre marrueco, 4 bolsillos con tapeta y velcro. Boton rojo – atraque rojo en todo el pantalón",
     variantes: [
       { sku: "1000052071", talla: "56", precio2026: 18950, precio2027: 18950 },
       { sku: "1000052072", talla: "38", precio2026: 18950, precio2027: 18950 },
@@ -309,6 +325,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "PANTALON CARGO 65% POLIESTER 35% ALGODÓN HOLA TA MUJER.pdf",
     imagen: "/images/prod-016.jpeg",
+    descripcion: "Sarga gabardina 65% Poliester - 35% Algodón Peso 250 gr/ml Costura reforzadas, cierre marrueco, 4 bolsillos con tapeta y velcro.",
     variantes: [
       { sku: "1000052083", talla: "38", precio2026: 19950, precio2027: 19950 },
       { sku: "1000052084", talla: "40", precio2026: 19950, precio2027: 19950 },
@@ -330,6 +347,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "PANTALON CARGO EQUANS HOMBRE 100% ALGODON.pdf",
     imagen: "/images/prod-017.jpeg",
+    descripcion: "Sarga gabardina 100% algodón Peso 250 gr/ml Costura reforzadas, cierre marrueco, 4 bolsillos con tapeta y velcro. Cinta reflectante de 5 cm ambas piernas.",
     variantes: [
       { sku: "1000051781", talla: "40", precio2026: 17750, precio2027: 17750 },
       { sku: "1000051773", talla: "42", precio2026: 17750, precio2027: 17750 },
@@ -354,6 +372,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "PANTALON CARGO EQUANS MUJER 100% ALGODON.pdf",
     imagen: "/images/prod-018.jpeg",
+    descripcion: "Sarga gabardina 100% algodón Peso 250 gr/ml Costura reforzadas, cierre marrueco, 4 bolsillos con tapeta y velcro. Cinta reflectante de 5 cm ambas piernas.",
     variantes: [
       { sku: "1000052022", talla: "38", precio2026: 18500, precio2027: 18500 },
       { sku: "1000052023", talla: "40", precio2026: 18500, precio2027: 18500 },
@@ -375,6 +394,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "PANTALON CARGO EQUANS HOMBRE 65% POLIESTER 35% ALGODÓN.pdf",
     imagen: "/images/prod-019.jpeg",
+    descripcion: "Sarga gabardina 65% Poliester. - 35% Algodón Peso 250 gr/ml Costura reforzadas, cierre marrueco, 4 bolsillos con tapeta y velcro.",
     variantes: [
       { sku: "1000052115", talla: "40", precio2026: 17750, precio2027: 17750 },
       { sku: "1000052041", talla: "42", precio2026: 17750, precio2027: 17750 },
@@ -398,6 +418,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "PANTALON MEZCLILLA DIELECTRICO HOMBRE 100% ALGODON.pdf",
     imagen: "/images/prod-020.jpeg",
+    descripcion: "Mezclilla 100% algodón Peso 320 gr/ml Costura reforzadas, cierre marrueco nylon, 4 bolsillos. Remache con hilo. Botón plásaco",
     variantes: [
       { sku: "1000074895", talla: "40", precio2026: 19750, precio2027: 19750 },
       { sku: "1000074886", talla: "42", precio2026: 19750, precio2027: 19750 },
@@ -419,6 +440,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "PANTALON MEZCLILLA EQUANS MUJER 100% ALGODON.pdf",
     imagen: "/images/prod-021.jpeg",
+    descripcion: "Mezclilla 100% algodón Peso 320 gr/ml Costura reforzadas, cierre marrueco, 4 bolsillos. Remache metálico Botón metálico",
     variantes: [
       { sku: "1000052001", talla: "38", precio2026: 18500, precio2027: 18500 },
       { sku: "1000052002", talla: "40", precio2026: 18500, precio2027: 18500 },
@@ -440,6 +462,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "PANTALON MEZCLILLA EQUANS HOMBRE 100% ALGODON.pdf",
     imagen: "/images/prod-022.jpeg",
+    descripcion: "Mezclilla 100% algodón Peso 320 gr/ml Costura reforzadas, cierre marrueco, 4 bolsillos. Remache metálico Botón metálico",
     variantes: [
       { sku: "1000051992", talla: "40", precio2026: 17750, precio2027: 17750 },
       { sku: "1000051993", talla: "42", precio2026: 17750, precio2027: 17750 },
@@ -463,6 +486,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "PARKA TMK ALASKA EQUANS HOMBRE.pdf",
     imagen: "/images/prod-023.jpeg",
+    descripcion: "Parka térmica con aislante de de napa y forro de chiporro/polar. Fabricada en Oxford 100% Nylon, tela de alta duración y resistete al desgaste causado por el uso •Aplicación de 2 cinta reflectiva de 2\" en zona delantera y espalda. •Aplicación de 2 cintas reflec- tivas de 1 cm a lo largo de los brazos. •Bolsillos delanteros superiores e inferiores con cierre y tapeta. •Ventilación en la parte inferior de los brazos. •Gorro invisible con ajuste elástico. •Puños ajustables con velcro. •Buen nivel de resistencia para ser lavado y usado frecuentemente.",
     variantes: [
       { sku: "1000052116", talla: "L", precio2026: 32500, precio2027: 32500 },
       { sku: "1000052117", talla: "M", precio2026: 32500, precio2027: 32500 },
@@ -482,6 +506,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "PARKA HW SIBERIA EQUANS.PDF",
     imagen: "/images/prod-024.jpeg",
+    descripcion: "Parka con membrana de dos capas, posee un alto nivel de impermeabilidad y respirabilidad, eliminando el exceso de calor y evitando el ingreso de agentes externos. Entrega un gran nivel de visibilidad por su color y bandas reflectivas de 2\". Sus excelentes propiedades térmicas retienen el calor corporal. Posee costuras selladas, que evitan que entre agua por esta, manteniendo el interior de la prenda totalmente alejada de la humedad, agua y/o nieve. Certificado por Norma Europea, EN 342 ( Ropa de Protección del frío), EN 343 ( Ropa de protección contra la lluvia)y EN ISO 20471 ( Ropa de protección alta visibilidad) Certificado por laboratorio Leitat en España.",
     variantes: [
       { sku: "1000087891", talla: "S", precio2026: 59950, precio2027: 59950 },
       { sku: "1000087892", talla: "M", precio2026: 59950, precio2027: 59950 },
@@ -501,6 +526,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "POLERA PIQUE 80% ALGODÓN 20% POLIESTER HOLA TA  HOMBRE.pdf",
     imagen: "/images/placeholder-polera.jpg",
+    descripcion: "Prenda de trabajo de alta calidad, confeccionada con materiales resistentes para uso industrial.",
     variantes: [
       { sku: "1000052073", talla: "L", precio2026: 13950, precio2027: 13950 },
       { sku: "1000052074", talla: "M", precio2026: 13950, precio2027: 13950 },
@@ -519,6 +545,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "POLERA PIQUE 80% ALGODÓN 20% POLIESTER HOLA TA MUJER.pdf",
     imagen: "/images/placeholder-polera.jpg",
+    descripcion: "Prenda de trabajo de alta calidad, confeccionada con materiales resistentes para uso industrial.",
     variantes: [
       { sku: "1000052078", talla: "L", precio2026: 13950, precio2027: 13950 },
       { sku: "1000052079", talla: "M", precio2026: 13950, precio2027: 13950 },
@@ -537,6 +564,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "POLERA PIQUE EQUANS HOMBRE 100% ALGODÓN MANGA LARGA.pdf",
     imagen: "/images/prod-027.jpeg",
+    descripcion: "Pique 100% Algodón. Cuellos y puños Cardigan Peso 220 gr/ml 2 Botones. Costura reforzada y tajali.",
     variantes: [
       { sku: "1000051787", talla: "XXL", precio2026: 9500, precio2027: 9500 },
       { sku: "1000051783", talla: "L", precio2026: 9500, precio2027: 9500 },
@@ -555,6 +583,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "POLERA PIQUE EQUANS MUJER 100% ALGODÓN MANGA LARGA.pdf",
     imagen: "/images/prod-028.jpeg",
+    descripcion: "Pique 100% Algodón. Cuellos y puños Cardigan Peso 220 gr/ml 2 Botones. Costura reforzada y tajali.",
     variantes: [
       { sku: "1000051789", talla: "M", precio2026: 9500, precio2027: 9500 },
       { sku: "1000051788", talla: "L", precio2026: 9500, precio2027: 9500 },
@@ -572,6 +601,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "POLERA PIQUE EQUANS HOMBRE 80% ALGODÓN 20% POLIESTER MANGA LARGA.pdf",
     imagen: "/images/prod-029.jpeg",
+    descripcion: "Pique 80% Algodón – 20% Poliester. Cuellos y puños Cardigan Peso 220 gr/ml 2 Botones. Costura reforzada y tajali.",
     variantes: [
       { sku: "1000051802", talla: "L", precio2026: 9500, precio2027: 9500 },
       { sku: "1000051803", talla: "M", precio2026: 9500, precio2027: 9500 },
@@ -591,6 +621,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "POLERA PIQUE EQUANS MUJER 80% ALGODÓN 20% POLIESTER MANGA LARGA.pdf",
     imagen: "/images/prod-030.jpeg",
+    descripcion: "Pique 80% Algodón – 20% Poliester. Cuellos y puños Cardigan Peso 220 gr/ml 2 Botones. Costura reforzada y tajali.",
     variantes: [
       { sku: "1000051806", talla: "L", precio2026: 9500, precio2027: 9500 },
       { sku: "1000051807", talla: "M", precio2026: 9500, precio2027: 9500 },
@@ -609,6 +640,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "POLERA PIQUE HOMBRE 80% ALGODÓN 20% POLIESTER MRDI ROJA.pdf",
     imagen: "/images/placeholder-polera.jpg",
+    descripcion: "Prenda de trabajo de alta calidad, confeccionada con materiales resistentes para uso industrial.",
     variantes: [
       { sku: "1000052184", talla: "L", precio2026: 13950, precio2027: 13950 },
       { sku: "1000052183", talla: "M", precio2026: 13950, precio2027: 13950 },
@@ -627,6 +659,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "POLERON AFRANELADO EQUANS HOMBRE 100% ALGODÓN .pdf",
     imagen: "/images/placeholder-poleron.jpg",
+    descripcion: "Prenda de trabajo de alta calidad, confeccionada con materiales resistentes para uso industrial.",
     variantes: [
       { sku: "1000051810", talla: "L", precio2026: 15950, precio2027: 15950 },
       { sku: "1000051812", talla: "M", precio2026: 15950, precio2027: 15950 },
@@ -645,6 +678,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "BUZO PILOTO 100% ALGODÓN CON REFLECTANTE.pdf",
     imagen: "/images/prod-033.jpeg",
+    descripcion: "Sarga gabardina 100% algodón Peso 250 gr/ml Costura reforzadas, cierre central, 4 bolsillos con tapeta y velcro. Cinta reflectante de 5 cm ambas piernas.",
     variantes: [
       { sku: "1000074828", talla: "S", precio2026: 19950, precio2027: 19950 },
       { sku: "1000074829", talla: "M", precio2026: 19950, precio2027: 19950 },
@@ -663,6 +697,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "BUZO DESECHABLE DUPONT TYVEX BLANCO.pdf",
     imagen: "/images/placeholder-buzo.jpg",
+    descripcion: "Prenda de trabajo de alta calidad, confeccionada con materiales resistentes para uso industrial.",
     variantes: [
       { sku: "2000037687", talla: "L", precio2026: 6250, precio2027: 6250 },
       { sku: "2000037689", talla: "XL", precio2026: 6250, precio2027: 6250 },
@@ -679,6 +714,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "SLACK 100% ALGODON.pdf",
     imagen: "/images/prod-035.jpeg",
+    descripcion: "Sarga gabardina 100% algodón Peso 250 gr/ml Costura reforzadas, cierre central, 2 bolsillos con tapeta. Cinta reflectante dia y noche de tela de 5 cm. en delantero, espalda y mangas.",
     variantes: [
       { sku: "1000074887", talla: "S", precio2026: 39950, precio2027: 39950 },
       { sku: "1000074819", talla: "M", precio2026: 39950, precio2027: 39950 },
@@ -697,6 +733,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "PIJAMA TERMICO POLIESTER.pdf",
     imagen: "/images/prod-036.jpeg",
+    descripcion: "Conjunto primera capa térmica unisex, pensada especialmente para personal expuesto a bajas temperaturas. • Confeccionado en tela 100% algodón, con diseño tipo panal de abeja (o waffle), el cual mediante su tejido tridimensional otorga propiedades térmicas, atrapando el calor corporal y formando una capa tibia cerca de la piel, por lo tanto aumentando la retención de calor. • Tejido altamente absorbente que a su vez favorece el flujo de aire, lo que permite su rápido secado. • Dado su composición 100% algodón, es una prenda antiestática por naturaleza, ya que disipa cargas eléctricas acumuladas por los movimientos propios del uso. • Pantalón y polera con terminación de puños y cuello en ribb para un calce más ajustado y comfortable. .",
     variantes: [
       { sku: "1000051687", talla: "S", precio2026: 13750, precio2027: 13750 },
       { sku: "1000051686", talla: "M", precio2026: 13750, precio2027: 13750 },
@@ -715,6 +752,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "CHALECO GEOLOGO GABARDINA NARANJO.pdf",
     imagen: "/images/prod-037.jpeg",
+    descripcion: "Gabardina Peso 220 gr/ml Cintura ajustable, costuras reforzadas, 6 bolsillos, con reflectante de 2.5 cm en delantero y de 5 cm en espalda",
     variantes: [
       { sku: "1000051671", talla: "S", precio2026: 13500, precio2027: 13500 },
       { sku: "1000051670", talla: "M", precio2026: 13500, precio2027: 13500 },
@@ -733,6 +771,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "CHALECO GEOLOGO ROJO CHGR.pdf",
     imagen: "/images/placeholder-chaleco.jpg",
+    descripcion: "Prenda de trabajo de alta calidad, confeccionada con materiales resistentes para uso industrial.",
     variantes: [
       { sku: "1000051674", talla: "S", precio2026: 13500, precio2027: 13500 },
       { sku: "1000051673", talla: "M", precio2026: 13500, precio2027: 13500 },
@@ -751,6 +790,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "POLERA POLO EQUANS 100% HBRE.PDF",
     imagen: "/images/prod-039.jpeg",
+    descripcion: "Pique 100% Algodón. Cuellos y puños Cardigan Peso 220 gr/ml 2 Botones. Costura reforzada y tajali.",
     variantes: [
       { sku: "1000087758", talla: "S", precio2026: 6950, precio2027: 6950 },
       { sku: "1000087759", talla: "M", precio2026: 6950, precio2027: 6950 },
@@ -770,6 +810,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "Polera pique con reflectante.pdf",
     imagen: "/images/prod-040.jpeg",
+    descripcion: "Polera definitiva que combina funcionalidad y comodidad en cada detalle. Su capacidad de secado rápido y control de humedad te mantiene fresco y seco en todo momento, mientras que su tejido hipoalergénico y antibacteriano ofrece una experiencia suave y segura para la piel. Equipada con detalles reflectivos y cintas para una mayor visibilidad, esta polera te brinda seguridad en condiciones de poca luz. La tela híbrida y altamente transpirable garantiza una sensación de frescura constante. Composición: 60% Algodón, 40% Poliéster",
     variantes: [
       { sku: "1000090955", talla: "M", precio2026: 16950, precio2027: 16950 },
       { sku: "1000090956", talla: "L", precio2026: 16950, precio2027: 16950 },
@@ -787,6 +828,7 @@ export const productos: Producto[] = [
     descuentoPct: -9.1,
     fichaTecnica: "CHALECO GEOLOGO AMARILLO:NARANJO CON REFLECTANTE.pdf",
     imagen: "/images/prod-041.jpeg",
+    descripcion: "100% Algodón Tela Santanense Peso 265 gr/ml 182 gr/ml +/- 1% Pre encogido Antimicrobial repelencia al agua y aceite Costura Reforzada Cuatro Bolsillo Frontal con Cierre Cierre Diente Perro Cinta Reflectante 3M de 5CM 30 Ciclos bajo norma .",
     variantes: [
       { sku: "2000041151", talla: "S", precio2026: 25500, precio2027: 25500 },
       { sku: "2000041150", talla: "M", precio2026: 25500, precio2027: 25500 },

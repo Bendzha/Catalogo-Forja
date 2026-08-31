@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Clock, CheckCircle2, Package, Warehouse, ShieldCheck } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, CheckCircle2, Package, Warehouse, ShieldCheck, Truck, PackageCheck } from 'lucide-react';
 import { productos } from '../data/productos';
 import ProductGrid from '../components/product/ProductGrid';
 import Button from '../components/ui/Button';
@@ -40,33 +40,53 @@ export default function Home() {
           </div>
 
           {/* Columna panel de cifras */}
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-6 backdrop-blur-sm">
-              <Warehouse size={26} className="text-[#0098C9] mb-3" />
+          <div className="grid grid-cols-2 gap-4 relative z-10">
+            <div className="group bg-white/5 border border-white/10 hover:border-[#0098C9]/50 hover:bg-white/10 rounded-2xl p-4 sm:p-6 backdrop-blur-sm transition-all duration-300">
+              <div className="w-11 h-11 rounded-xl bg-[#0098C9]/15 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Warehouse size={22} className="text-[#0098C9]" />
+              </div>
               <p className="text-xl sm:text-2xl font-extrabold">3.000 m²</p>
               <p className="text-xs text-white/60 mt-1">Centro de distribución operado</p>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-6 backdrop-blur-sm">
-              <Package size={26} className="text-[#0098C9] mb-3" />
+            <div className="group bg-white/5 border border-white/10 hover:border-[#0098C9]/50 hover:bg-white/10 rounded-2xl p-4 sm:p-6 backdrop-blur-sm transition-all duration-300">
+              <div className="w-11 h-11 rounded-xl bg-[#0098C9]/15 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Package size={22} className="text-[#0098C9]" />
+              </div>
               <p className="text-xl sm:text-2xl font-extrabold">$600MM+</p>
               <p className="text-xs text-white/60 mt-1">En inventario gestionado</p>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-6 backdrop-blur-sm">
-              <ShieldCheck size={26} className="text-[#FE8900] mb-3" />
+            <div className="group bg-white/5 border border-white/10 hover:border-[#FE8900]/50 hover:bg-white/10 rounded-2xl p-4 sm:p-6 backdrop-blur-sm transition-all duration-300">
+              <div className="w-11 h-11 rounded-xl bg-[#FE8900]/15 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <ShieldCheck size={22} className="text-[#FE8900]" />
+              </div>
               <p className="text-xl sm:text-2xl font-extrabold">15 años</p>
               <p className="text-xs text-white/60 mt-1">De experiencia en terreno</p>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-6 backdrop-blur-sm">
-              <CheckCircle2 size={26} className="text-[#FE8900] mb-3" />
+            <div className="group bg-white/5 border border-white/10 hover:border-[#FE8900]/50 hover:bg-white/10 rounded-2xl p-4 sm:p-6 backdrop-blur-sm transition-all duration-300">
+              <div className="w-11 h-11 rounded-xl bg-[#FE8900]/15 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <CheckCircle2 size={22} className="text-[#FE8900]" />
+              </div>
               <p className="text-xl sm:text-2xl font-extrabold">SAP</p>
               <p className="text-xs text-white/60 mt-1">Estándar de trazabilidad</p>
             </div>
           </div>
         </div>
 
-        {/* Decoración de fondo sutil */}
-        <div className="absolute -right-24 -bottom-24 w-96 h-96 rounded-full bg-[#0098C9]/10 blur-3xl" />
-        <div className="absolute -left-24 -top-24 w-72 h-72 rounded-full bg-[#FE8900]/10 blur-3xl" />
+        {/* Fondo tipo plano técnico + manchas de color */}
+        <svg
+          className="absolute inset-0 w-full h-full opacity-[0.07]"
+          aria-hidden="true"
+        >
+          <defs>
+            <pattern id="grid-hero" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid-hero)" />
+        </svg>
+        <div className="absolute -right-24 -bottom-24 w-96 h-96 rounded-full bg-[#0098C9]/15 blur-3xl" />
+        <div className="absolute -left-24 -top-24 w-72 h-72 rounded-full bg-[#FE8900]/15 blur-3xl" />
+        <div className="absolute top-1/2 right-1/4 w-64 h-64 rounded-full bg-[#0098C9]/5 blur-3xl" />
       </section>
 
       {/* Clientes / credibilidad */}
@@ -109,16 +129,25 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
             {[
-              'Stock crítico asegurado',
-              'Entrega en terreno y faena',
-              'Trazabilidad total con estándar SAP',
-            ].map((item) => (
+              { texto: 'Stock crítico asegurado', icono: PackageCheck, color: '#0098C9' },
+              { texto: 'Entrega en terreno y faena', icono: Truck, color: '#FE8900' },
+              { texto: 'Trazabilidad total con estándar SAP', icono: ShieldCheck, color: '#0098C9' },
+            ].map(({ texto, icono: Icono, color }) => (
               <div
-                key={item}
-                className="bg-white rounded-2xl shadow-sm p-5 border border-[#112433]/5 flex items-start gap-3"
+                key={texto}
+                className="group relative bg-white rounded-2xl shadow-sm hover:shadow-lg p-5 pt-6 border border-[#112433]/5 overflow-hidden transition-all duration-300 hover:-translate-y-1"
               >
-                <CheckCircle2 size={20} className="text-[#0098C9] flex-shrink-0 mt-0.5" />
-                <p className="text-sm font-medium text-[#112433]">{item}</p>
+                <div
+                  className="absolute top-0 left-0 right-0 h-1"
+                  style={{ backgroundColor: color }}
+                />
+                <div
+                  className="w-11 h-11 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform"
+                  style={{ backgroundColor: `${color}18` }}
+                >
+                  <Icono size={22} style={{ color }} />
+                </div>
+                <p className="text-sm font-semibold text-[#112433]">{texto}</p>
               </div>
             ))}
           </div>
@@ -160,7 +189,7 @@ export default function Home() {
               </div>
               <div>
                 <p className="text-sm text-[#112433]/50">Correo</p>
-                <p className="font-medium text-[#112433]">Logistica.jarias@gmail.com</p>
+                <p className="font-medium text-[#112433]">contacto@ariasupplylogistics.cl</p>
               </div>
             </div>
 
